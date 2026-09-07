@@ -11,21 +11,21 @@ nvidia-smi -L
 
 cd $HOME/URB
 
-# Activate Conda environment
-source $HOME/miniconda3/etc/profile.d/conda.sh
-conda activate URB
+CONTAINER="/shared/sets/singularity/sumo1_26_0patched.sif"
 
-export SUMO_HOME=$CONDA_PREFIX/share/sumo
-export PATH=$CONDA_PREFIX/bin:$PATH
+singularity exec --nv "$CONTAINER" /bin/bash -c '
+    cd $HOME/URB
+    source $HOME/miniconda3/etc/profile.d/conda.sh
+    conda activate URB
 
-# Abort job immediately if CUDA is not visible to PyTorch
-python -c "import torch; assert torch.cuda.is_available(), 'CUDA not available in PyTorch!'"
+    python -c "import torch; assert torch.cuda.is_available(), \"CUDA not available in PyTorch!\""
 
-python -u scripts/qmix_torchrl_clusters.py \
-    --id qmix_clusters_alt10_ing2_s43 \
-    --alg-conf config1 \
-    --env-conf clusters_eta \
-    --task-conf altruistic_10 \
-    --net ingolstadt_custom2 \
-    --env-seed 43 \
-    --torch-seed 43
+    python -u scripts/qmix_torchrl_clusters.py \
+        --id qmix_clusters_alt10_ing2_s43 \
+        --alg-conf config1 \
+        --env-conf clusters_eta \
+        --task-conf altruistic_10 \
+        --net ingolstadt_custom2 \
+        --env-seed 43 \
+        --torch-seed 43
+'
