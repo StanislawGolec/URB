@@ -247,14 +247,25 @@ if __name__ == "__main__":
         json.dump(dump_config, f, indent=4)
 
     # Initiate W&B Tracking
-    wandb.init(
-        project="URB-Traffic-Routing",
-        entity="aintern26coexistence",
-        name=exp_id,
-        group=f"{ALGORITHM}_{network}",
-        tags=[ALGORITHM, network, task_config, alg_config, "clusters"],
-        config=dump_config,
-    )
+    try:
+        wandb.init(
+            project="URB-Traffic-Routing",
+            entity="aintern26coexistence",
+            name=exp_id,
+            group=f"{ALGORITHM}_{network}",
+            tags=[ALGORITHM, network, task_config, alg_config, "clusters"],
+            config=dump_config,
+        )
+    except Exception as e:
+        print(f"[W&B WARNING] wandb online init failed ({e}). Falling back to offline mode.")
+        wandb.init(
+            project="URB-Traffic-Routing",
+            name=exp_id,
+            mode="offline",
+            group=f"{ALGORITHM}_{network}",
+            tags=[ALGORITHM, network, task_config, alg_config, "clusters"],
+            config=dump_config,
+        )
 
     # Initiate the traffic environment
     env = TrafficEnvironment(
