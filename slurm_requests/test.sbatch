@@ -11,8 +11,12 @@ nvidia-smi -L
 
 cd $HOME/URB
 
-# Activate virtual/conda environment
-source activate URB 2>/dev/null || conda activate URB 2>/dev/null || source .venv/bin/activate 2>/dev/null || true
+# Activate Conda environment
+source $HOME/miniconda3/etc/profile.d/conda.sh
+conda activate URB
+
+export SUMO_HOME=$CONDA_PREFIX/share/sumo
+export PATH=$CONDA_PREFIX/bin:$PATH
 
 # Abort job immediately if CUDA is not visible to PyTorch
 python -c "import torch; assert torch.cuda.is_available(), 'CUDA not available in PyTorch!'"
