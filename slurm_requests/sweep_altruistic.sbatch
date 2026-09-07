@@ -1,11 +1,12 @@
 #!/bin/bash
 #SBATCH --job-name=qmix_alt_sweep
 #SBATCH --partition=student
-#SBATCH --qos=quick
+#SBATCH --qos=normal
+#SBATCH --time=2-00:00:00
 #SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
-#SBATCH --array=1-10%2
+#SBATCH --array=1-10%3
 #SBATCH --output=container_printouts/slurm-%A_%a.out
 
 nvidia-smi -L
