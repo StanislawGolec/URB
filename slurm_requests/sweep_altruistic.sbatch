@@ -6,7 +6,7 @@
 #SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
-#SBATCH --array=1-10%3
+#SBATCH --array=1-10
 #SBATCH --output=container_printouts/slurm-%A_%a.out
 
 nvidia-smi -L
