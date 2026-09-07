@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=qmix_ing2_alt10_s42
-#SBATCH --partition=rtx3080
+#SBATCH --partition=student
 #SBATCH --qos=quick
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4

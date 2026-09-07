@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=urb_test_sa
-#SBATCH --partition=rtx3080
-#SBATCH --qos=test
+#SBATCH --partition=student
+#SBATCH --qos=quick
 #SBATCH --gres=gpu:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
