@@ -42,6 +42,8 @@ from utils import print_agent_counts
 from utils import run_metrics_analysis
 from utils import save_loss_records
 from utils import script_path_for_config
+from utils import init_wandb
+from utils import finish_wandb
 
 
 class TorchRLObservationEncoder(torch.nn.Module):
@@ -247,25 +249,15 @@ if __name__ == "__main__":
         json.dump(dump_config, f, indent=4)
 
     # Initiate W&B Tracking
-    try:
-        wandb.init(
-            project="URB-Traffic-Routing",
-            entity="aintern26coexistence",
-            name=exp_id,
-            group=f"{ALGORITHM}_{network}",
-            tags=[ALGORITHM, network, task_config, alg_config, "clusters"],
-            config=dump_config,
-        )
-    except Exception as e:
-        print(f"[W&B WARNING] wandb online init failed ({e}). Falling back to offline mode.")
-        wandb.init(
-            project="URB-Traffic-Routing",
-            name=exp_id,
-            mode="offline",
-            group=f"{ALGORITHM}_{network}",
-            tags=[ALGORITHM, network, task_config, alg_config, "clusters"],
-            config=dump_config,
-        )
+    init_wandb(
+        exp_id=exp_id,
+        algorithm=ALGORITHM,
+        network=network,
+        task_config=task_config,
+        alg_config=alg_config,
+        dump_config=dump_config,
+        extra_tags=["clusters"],
+    )
 
     # Initiate the traffic environment
     env = TrafficEnvironment(
@@ -549,15 +541,16 @@ if __name__ == "__main__":
             )
 
             # wandb logging
-            current_eps = qnet_explore[1].eps.item() if hasattr(qnet_explore[1], "eps") else 0.0
-            mean_reward = tensordict_data.get(("next", "episode_reward")).mean().item()
+            if wandb.run is not None:
+                current_eps = qnet_explore[1].eps.item() if hasattr(qnet_explore[1], "eps") else 0.0
+                mean_reward = tensordict_data.get(("next", "episode_reward")).mean().item()
 
-            wandb.log({
-                "train/loss": loss,
-                "train/mean_reward": mean_reward,
-                "train/epsilon": current_eps,
-                "iteration": len(loss_records),
-            })
+                wandb.log({
+                    "train/loss": loss,
+                    "train/mean_reward": mean_reward,
+                    "train/epsilon": current_eps,
+                    "iteration": len(loss_records),
+                })
         qnet_explore[1].step(frames=current_frames)  # Update exploration annealing
         collector.update_policy_weights_()
         pbar.update()
@@ -587,11 +580,4 @@ if __name__ == "__main__":
 
     clear_SUMO_files(os.path.join(records_folder, "SUMO_output"), os.path.join(records_folder, "episodes"), remove_additional_files=True)
     run_metrics_analysis(exp_id, results_folder="../results")
-
-    # wandb uploading
-    if os.path.exists(plots_folder):
-        for plot_file in os.listdir(plots_folder):
-            if plot_file.endswith(".png"):
-                plot_path = os.path.join(plots_folder, plot_file)
-                wandb.log({f"plots/{plot_file.replace('.png', '')}": wandb.Image(plot_path)})
-    wandb.finish()
+    finish_wandb(exp_id, records_folder=records_folder, results_folder="../results")

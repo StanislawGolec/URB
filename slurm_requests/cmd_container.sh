@@ -7,6 +7,11 @@ export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:${LD_LIBR
 # Navigate to the mounted application folder
 cd /app
 
+# Ensure user environment (such as WANDB_API_KEY) is available
+if [ -f "$HOME/.bashrc" ]; then
+    source "$HOME/.bashrc" 2>/dev/null || true
+fi
+
 # Activate Conda environment
 source $HOME/miniconda3/etc/profile.d/conda.sh
 conda activate URB

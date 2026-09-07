@@ -3,7 +3,15 @@ import os
 import csv
 import subprocess
 import sys
-from typing import Optional
+import math
+from typing import Optional, Any
+
+try:
+    import wandb
+    HAS_WANDB = True
+except ImportError:
+    wandb = None
+    HAS_WANDB = False
 
 
 
@@ -266,5 +274,185 @@ def run_metrics_analysis(exp_id: str, results_folder: str = "../results", verbos
         )
         return False
     return True
+
+
+def init_wandb(
+    exp_id: str,
+    algorithm: str,
+    network: str,
+    dump_config: dict,
+    task_config: Optional[str] = None,
+    alg_config: Optional[str] = None,
+    extra_tags: Optional[list[str]] = None,
+    group: Optional[str] = None,
+    project: str = "URB-Traffic-Routing",
+    entity: Optional[str] = "aintern26coexistence",
+    mode: Optional[str] = None,
+) -> Any:
+    """
+    Initialize Weights & Biases experiment tracking with graceful offline fallback.
+
+    Args:
+        exp_id: Unique experiment identifier (used as run name).
+        algorithm: Algorithm name (e.g. 'qmix_torchrl_clusters').
+        network: SUMO network name (e.g. 'ingolstadt_custom2').
+        dump_config: Full dictionary of experiment hyperparameters.
+        task_config: Optional task config name.
+        alg_config: Optional algorithm config name.
+        extra_tags: Optional list of additional tags (e.g. ['clusters']).
+        group: Optional group name. Defaults to '{algorithm}_{network}'.
+        project: W&B project name.
+        entity: W&B team/entity name.
+        mode: W&B run mode ('online', 'offline', or None).
+    """
+    if not HAS_WANDB or wandb is None:
+        print("[W&B WARNING] wandb is not installed. Experiment tracking disabled.")
+        return None
+
+    tags = [algorithm, network]
+    if task_config:
+        tags.append(task_config)
+    if alg_config:
+        tags.append(alg_config)
+    if extra_tags:
+        for tag in extra_tags:
+            if tag not in tags:
+                tags.append(tag)
+
+    if group is None:
+        group = f"{algorithm}_{network}"
+
+    init_kwargs = {
+        "project": project,
+        "name": exp_id,
+        "group": group,
+        "tags": tags,
+        "config": dump_config,
+    }
+    if entity:
+        init_kwargs["entity"] = entity
+    if mode:
+        init_kwargs["mode"] = mode
+
+    try:
+        run = wandb.init(**init_kwargs)
+        print(f"[W&B] Initialized run '{exp_id}' in project '{project}' (mode: {getattr(run, 'mode', 'online')}).")
+        return run
+    except Exception as e:
+        print(f"[W&B WARNING] wandb online init failed ({e}). Falling back to offline mode.")
+        init_kwargs["mode"] = "offline"
+        try:
+            run = wandb.init(**init_kwargs)
+            print(f"[W&B] Initialized run '{exp_id}' in offline mode.")
+            return run
+        except Exception as e2:
+            init_kwargs.pop("entity", None)
+            try:
+                run = wandb.init(**init_kwargs)
+                print(f"[W&B] Initialized run '{exp_id}' in offline mode without entity.")
+                return run
+            except Exception as e3:
+                print(f"[W&B ERROR] Could not initialize wandb: {e3}")
+                return None
+
+
+def finish_wandb(
+    exp_id: str,
+    records_folder: Optional[str] = None,
+    results_folder: str = "../results",
+) -> None:
+    """
+    Upload experiment artifacts (summary metrics from BenchmarkMetrics.csv, plots)
+    and close the active W&B run.
+
+    Args:
+        exp_id: Unique experiment identifier.
+        records_folder: Path to experiment records folder (e.g. ../results/<exp_id>).
+                        If None, inferred from results_folder and exp_id.
+        results_folder: Root folder for all results.
+    """
+    if not HAS_WANDB or wandb is None or wandb.run is None:
+        return
+
+    # Determine records_folder if not provided
+    if records_folder is None:
+        records_folder = os.path.join(results_folder, exp_id)
+
+    # Search for actual folder if the relative path doesn't exist
+    if not os.path.exists(records_folder):
+        for root, dirs, _ in os.walk(results_folder):
+            if exp_id in dirs:
+                records_folder = os.path.join(root, exp_id)
+                break
+
+    # 1. Log summary metrics from BenchmarkMetrics.csv into wandb.summary
+    benchmark_candidates = [
+        os.path.join(records_folder, "metrics", "BenchmarkMetrics.csv"),
+        os.path.join(records_folder, "metrics", "benchmarkMetrics.csv"),
+        os.path.join(records_folder, "metrics", "benchmarkmetrics.csv"),
+        os.path.join(records_folder, "BenchmarkMetrics.csv"),
+    ]
+    benchmark_csv_path = None
+    for cand in benchmark_candidates:
+        if os.path.exists(cand):
+            benchmark_csv_path = cand
+            break
+
+    if benchmark_csv_path:
+        try:
+            with open(benchmark_csv_path, mode="r", encoding="utf-8") as f:
+                reader = csv.DictReader(f)
+                rows = list(reader)
+                if rows:
+                    summary_count = 0
+                    for k, v in rows[0].items():
+                        if v is None or v == "":
+                            continue
+                        try:
+                            if "." in v or "e" in v.lower():
+                                val = float(v)
+                                if math.isnan(val) or math.isinf(val):
+                                    continue
+                            else:
+                                val = int(v)
+                        except ValueError:
+                            val = v
+                        wandb.summary[f"benchmark/{k}"] = val
+                        summary_count += 1
+                    if summary_count > 0:
+                        print(f"[W&B] Logged {summary_count} benchmark metrics to wandb.summary.")
+        except Exception as e:
+            print(f"[W&B WARNING] Could not parse benchmark metrics from {benchmark_csv_path}: {e}")
+
+    # 2. Upload plots from records_folder/plots and records_folder/metrics/plots
+    plot_dirs = [
+        (os.path.join(records_folder, "plots"), "plots"),
+        (os.path.join(records_folder, "metrics", "plots"), "plots/metrics"),
+    ]
+    images_to_log = {}
+    for dir_path, prefix in plot_dirs:
+        if os.path.exists(dir_path):
+            for fname in sorted(os.listdir(dir_path)):
+                if fname.lower().endswith(".png"):
+                    img_path = os.path.join(dir_path, fname)
+                    img_key = f"{prefix}/{fname[:-4]}"
+                    try:
+                        images_to_log[img_key] = wandb.Image(img_path)
+                    except Exception as e:
+                        print(f"[W&B WARNING] Failed to load image {img_path}: {e}")
+
+    if images_to_log:
+        try:
+            wandb.log(images_to_log)
+            print(f"[W&B] Logged {len(images_to_log)} plot images to W&B.")
+        except Exception as e:
+            print(f"[W&B WARNING] Failed to upload plots to W&B: {e}")
+
+    # 3. Finish run
+    try:
+        wandb.finish()
+        print(f"[W&B] Finished run '{exp_id}'.")
+    except Exception as e:
+        print(f"[W&B WARNING] Error finishing wandb run: {e}")
 
 
