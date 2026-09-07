@@ -17,15 +17,23 @@ PRINTS_SAVE_PATH="$PATH_PROGRAM/slurm_requests/container_printouts/output_${SLUR
 
 mkdir -p "$PATH_PROGRAM/slurm_requests/container_printouts"
 
+if [ "$#" -gt 0 ]; then
+    CMD_ARGS=("$@")
+else
+    CMD_ARGS=(
+        scripts/qmix_torchrl_clusters.py
+        --id qmix_clusters_alt10_ing2_s42
+        --alg-conf config1
+        --env-conf clusters_eta
+        --task-conf altruistic_10
+        --net ingolstadt_custom2
+        --env-seed 42
+        --torch-seed 42
+    )
+fi
+
 singularity exec --nv \
     --bind "$PATH_PROGRAM":"$PUT_PROGRAM_TO" \
     "$PATH_SUMO_CONTAINER" /bin/bash "$CMD_PATH" \
-    scripts/qmix_torchrl_clusters.py \
-    --id qmix_clusters_alt10_ing2_s42 \
-    --alg-conf config1 \
-    --env-conf clusters_eta \
-    --task-conf altruistic_10 \
-    --net ingolstadt_custom2 \
-    --env-seed 42 \
-    --torch-seed 42 \
+    "${CMD_ARGS[@]}" \
     2>&1 | tee "$PRINTS_SAVE_PATH"

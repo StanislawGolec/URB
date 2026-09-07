@@ -217,6 +217,7 @@ if __name__ == "__main__":
     dump_config["algorithm"] = ALGORITHM
     dump_config["script"] = script_path_for_config(__file__)
     dump_config["route_set"] = route_set
+    dump_config["exp_type"] = "normal"
 
     create_paths_flag = True
     action_masks = None

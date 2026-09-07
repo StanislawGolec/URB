@@ -44,6 +44,7 @@ from utils import print_agent_counts
 from utils import run_metrics_analysis
 from utils import save_loss_records
 from utils import script_path_for_config
+from utils import init_wandb, finish_wandb, wandb
 
 
 class TorchRLObservationEncoder(torch.nn.Module):
@@ -227,9 +228,20 @@ if __name__ == "__main__":
     if use_clustered_routes:
         dump_config["number_of_paths"] = number_of_paths
         dump_config["shuffle"] = shuffle
-
+    dump_config["exp_type"] = "normal"
     with open(exp_config_path, 'w', encoding='utf-8') as f:
         json.dump(dump_config, f, indent=4)
+
+    # Initiate W&B Tracking
+    init_wandb(
+        exp_id=exp_id,
+        algorithm=ALGORITHM,
+        network=network,
+        task_config=task_config,
+        alg_config=alg_config,
+        dump_config=dump_config,
+        extra_tags=["clusters"],
+    )
 
     # Initiate the traffic environment
     env = TrafficEnvironment(
@@ -558,6 +570,18 @@ if __name__ == "__main__":
                     "loss_critic": sum(step_loss_critic) / len(step_loss_critic),
                 }
             )
+
+            # wandb logging
+            if wandb is not None and wandb.run is not None:
+                mean_reward = tensordict_data.get(("next", "episode_reward")).mean().item()
+                wandb.log({
+                    "train/loss": avg_loss_value,
+                    "train/loss_entropy": sum(step_loss_entropy) / len(step_loss_entropy),
+                    "train/loss_objective": sum(step_loss_objective) / len(step_loss_objective),
+                    "train/loss_critic": sum(step_loss_critic) / len(step_loss_critic),
+                    "train/mean_reward": mean_reward,
+                    "iteration": len(loss_records),
+                })
         collector.update_policy_weights_()
         pbar.update()
     
@@ -584,3 +608,4 @@ if __name__ == "__main__":
 
     clear_SUMO_files(os.path.join(records_folder, "SUMO_output"), os.path.join(records_folder, "episodes"), remove_additional_files=True)
     run_metrics_analysis(exp_id, results_folder="../results")
+    finish_wandb(exp_id, records_folder=records_folder, results_folder="../results")

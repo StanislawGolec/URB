@@ -22,6 +22,7 @@ from utils import clear_SUMO_files
 from utils import run_metrics_analysis
 from utils import script_path_for_config
 from utils import print_agent_counts
+from utils import init_wandb, finish_wandb, wandb
 
 if __name__ == "__main__":
     raise NotImplementedError("This script is a template and should not be run directly. Please use the appropriate script for your experiment.")
@@ -121,9 +122,20 @@ if __name__ == "__main__":
     dump_config["num_machines"] = num_machines
     dump_config["algorithm"] = ALGORITHM
     dump_config["script"] = script_path_for_config(__file__)
+    dump_config["exp_type"] = "normal"
     # Any other parameters you want to save in `exp_config.json` can be added here
     with open(exp_config_path, 'w', encoding='utf-8') as f:
         json.dump(dump_config, f, indent=4)
+
+    # Initiate W&B Tracking (optional)
+    init_wandb(
+        exp_id=exp_id,
+        algorithm=ALGORITHM or "baseline",
+        network=network,
+        task_config=task_config,
+        alg_config=alg_config,
+        dump_config=dump_config,
+    )
 
     
     env = TrafficEnvironment(
@@ -206,3 +218,4 @@ if __name__ == "__main__":
     # Clean SUMO-generated redundant files
     clear_SUMO_files(os.path.join(records_folder, "SUMO_output"), os.path.join(records_folder, "episodes"), remove_additional_files=True)
     run_metrics_analysis(exp_id, results_folder="../results")
+    finish_wandb(exp_id, records_folder=records_folder, results_folder="../results")
