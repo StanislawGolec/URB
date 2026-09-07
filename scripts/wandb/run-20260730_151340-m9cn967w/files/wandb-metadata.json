@@ -1,0 +1,56 @@
+{
+  "os": "Windows-11-10.0.26200-SP0",
+  "python": "CPython 3.13.8",
+  "startedAt": "2026-07-30T13:13:40.816558Z",
+  "args": [
+    "--id",
+    "sa",
+    "--task-conf",
+    "altruistic_10",
+    "--env-conf",
+    "clusters_eta",
+    "--alg-conf",
+    "config1",
+    "--net",
+    "saint_arnoult",
+    "--env-seed",
+    "42",
+    "--torch-seed",
+    "42"
+  ],
+  "program": "C:\\Users\\Stanisław\\Desktop\\AIntern\\URB\\scripts\\qmix_torchrl.py",
+  "codePath": "scripts\\qmix_torchrl.py",
+  "codePathLocal": "qmix_torchrl.py",
+  "git": {
+    "remote": "https://github.com/COeXISTENCE-PROJECT/URB.git",
+    "commit": "4e9c1098685c074b396fd5f362cdd42325bb1bae"
+  },
+  "email": "stasscpl@gmail.com",
+  "root": "C:\\Users\\Stanisław\\Desktop\\AIntern\\URB\\scripts",
+  "host": "DESKTOP-4HBJ14G",
+  "executable": "C:\\Users\\Stanisław\\Desktop\\AIntern\\URB\\venv\\Scripts\\python.exe",
+  "cpu_count": 8,
+  "cpu_count_logical": 12,
+  "gpu": "NVIDIA GeForce RTX 4050 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "254345736192",
+      "used": "243944079360"
+    }
+  },
+  "memory": {
+    "total": "16789004288"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4050 Laptop GPU",
+      "memoryTotal": "6439305216",
+      "cudaCores": 2560,
+      "architecture": "Ada",
+      "uuid": "GPU-29bb3c6b-57d9-d963-9521-2e2a1894e808"
+    }
+  ],
+  "cudaVersion": "13.2",
+  "writerId": "gza738nr6p9ov7lcrlq7uyzvj4lhmn33"
+}

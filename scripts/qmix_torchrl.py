@@ -5,6 +5,8 @@ The QMIX implementation is based on: https://github.com/pytorch/rl/blob/main/sot
 
 import os
 
+import wandb
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
     
 import argparse
@@ -137,6 +139,7 @@ if __name__ == "__main__":
     
     # Dump exp config to records
     exp_config_path = os.path.join(records_folder, "exp_config.json")
+    
     dump_config = params.copy()
     dump_config["network"] = network
     dump_config["env_seed"] = env_seed
@@ -150,6 +153,16 @@ if __name__ == "__main__":
     dump_config["script"] = script_path_for_config(__file__)
     with open(exp_config_path, 'w', encoding='utf-8') as f:
         json.dump(dump_config, f, indent=4)
+
+    # Initiate W&B Tracking
+    wandb.init(
+        project="URB-Traffic-Routing",          # Name of your W&B project
+        entity="aintern26coexistence",          # Your team workspace
+        name=exp_id,                            # e.g., "exp_qmix_collab"
+        group=f"{ALGORITHM}_{network}",         # Groups runs (e.g., "qmix_torchrl_saint_arnoult")
+        tags=[ALGORITHM, network, task_config, alg_config],
+        config=dump_config,                     # Auto-logs all parameters from JSONs!
+    )
 
     # Initiate the traffic environment
     env = TrafficEnvironment(
@@ -388,6 +401,17 @@ if __name__ == "__main__":
                     "loss": loss,
                 }
             )
+
+            # wandb logging
+            current_eps = qnet_explore[1].eps.item() if hasattr(qnet_explore[1], "eps") else 0.0
+            mean_reward = tensordict_data.get(("next", "episode_reward")).mean().item()
+
+            wandb.log({
+                "train/loss": loss,                            # QMIX TD-Loss
+                "train/mean_reward": mean_reward,              # Fleet average reward
+                "train/epsilon": current_eps,                  # Epsilon-greedy decay state
+                "iteration": len(loss_records),
+            })
         qnet_explore[1].step(frames=current_frames)  # Update exploration annealing
         collector.update_policy_weights_()
         pbar.update()
@@ -417,3 +441,11 @@ if __name__ == "__main__":
 
     clear_SUMO_files(os.path.join(records_folder, "SUMO_output"), os.path.join(records_folder, "episodes"), remove_additional_files=True)
     run_metrics_analysis(exp_id, results_folder="../results")
+
+    # wandb uploading
+    if os.path.exists(plots_folder):
+        for plot_file in os.listdir(plots_folder):
+            if plot_file.endswith(".png"):
+                plot_path = os.path.join(plots_folder, plot_file)
+                wandb.log({f"plots/{plot_file.replace('.png', '')}": wandb.Image(plot_path)})
+    wandb.finish()
