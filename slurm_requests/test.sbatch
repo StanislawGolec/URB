@@ -14,6 +14,7 @@ cd $HOME/URB
 CONTAINER="/shared/sets/singularity/sumo1_26_0patched.sif"
 
 singularity exec --nv "$CONTAINER" /bin/bash -c '
+    export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu:/lib/x86_64-linux-gnu:${LD_LIBRARY_PATH}
     cd $HOME/URB
     source $HOME/miniconda3/etc/profile.d/conda.sh
     conda activate URB
