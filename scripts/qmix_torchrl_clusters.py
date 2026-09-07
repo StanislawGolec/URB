@@ -84,6 +84,12 @@ if __name__ == "__main__":
         default=None,
         help="Named route-set subdirectory. Uses the network default when omitted.",
     )
+    parser.add_argument(
+        '--cpu',
+        action='store_true',
+        default=False,
+        help="Allow running on CPU if CUDA is not available.",
+    )
     args = parser.parse_args()
     ALGORITHM = "qmix_torchrl"
     exp_id = args.id
@@ -118,12 +124,17 @@ if __name__ == "__main__":
     torch.backends.cudnn.benchmark = False
 
     
-    device = (
-        torch.device(0)
-        if torch.cuda.is_available()
-        else torch.device("cpu")
-    )
-    print("device is: ", device)
+    if not torch.cuda.is_available():
+        if not args.cpu:
+            raise RuntimeError(
+                "CRITICAL ERROR: CUDA/GPU is not available! Execution aborted to prevent slow CPU training. "
+                "If you intentionally want to test on CPU, pass the '--cpu' flag."
+            )
+        device = torch.device("cpu")
+        print("Running on CPU (explicitly requested via --cpu)")
+    else:
+        device = torch.device(0)
+        print(f"Device: {device} ({torch.cuda.get_device_name(0)})")
 
      
     # Parameter setting

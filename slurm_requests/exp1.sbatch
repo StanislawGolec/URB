@@ -14,6 +14,9 @@ cd $HOME/URB
 # Activate virtual/conda environment (adjust name if different)
 source activate URB 2>/dev/null || conda activate URB 2>/dev/null || source .venv/bin/activate 2>/dev/null || true
 
+# Abort job immediately if CUDA is not visible to PyTorch
+python -c "import torch; assert torch.cuda.is_available(), 'CUDA not available in PyTorch!'"
+
 python -u scripts/qmix_torchrl_clusters.py \
     --id qmix_clusters_alt10_ing2_s42 \
     --alg-conf config1 \
