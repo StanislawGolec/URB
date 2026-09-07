@@ -8,6 +8,55 @@ from gymnasium.spaces import Dict, MultiBinary
 from pettingzoo.utils.wrappers import BaseWrapper
 
 
+def patch_human_action_mask():
+    """
+    Patch RouteRL's HumanAgent.act to handle action masking correctly when
+    human_beta is negative.
+    
+    In RouteRL's Gawron model, utility = exp(cost * beta).
+    RouteRL originally hardcoded masked_cost = -inf.
+    If beta < 0, (-inf) * beta = +inf, causing exp(+inf) = inf and NaN probabilities.
+    For beta < 0, masked_cost must be +inf, so (+inf) * beta = -inf and exp(-inf) = 0.
+    """
+    try:
+        from routerl.environment.agent import HumanAgent, Random
+    except ImportError:
+        return
+
+    def _patched_act(self, observation) -> int:
+        if self.action_mask is not None:
+            if not np.any(self.action_mask):
+                raise ValueError("Action mask must allow at least one route")
+
+            allowed_actions = np.flatnonzero(self.action_mask)
+            original_cost = self.model.cost.copy()
+            masked_cost = original_cost.copy()
+
+            beta = getattr(self.model, "beta", 1.0)
+            mask_val = np.inf if beta < 0 else -np.inf
+            masked_cost[np.asarray(self.action_mask) == 0] = mask_val
+            self.model.cost = masked_cost
+            try:
+                action = self.model.act(observation)
+            except Exception:
+                action = int(np.random.choice(allowed_actions))
+            finally:
+                self.model.cost = original_cost
+
+            if self.action_mask[action] == 0:
+                action = int(np.random.choice(allowed_actions))
+            return action
+        elif self.default_action is not None:
+            return self.default_action
+        else:
+            return self.model.act(observation)
+
+    HumanAgent.act = _patched_act
+
+
+patch_human_action_mask()
+
+
 DEFAULT_ROUTE_SETS_BY_NETWORK = {
     "ingolstadt_custom": "default-pre-integration",
     "ingolstadt_custom2": "default-pre-integration",

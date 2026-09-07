@@ -16,6 +16,51 @@ except ImportError:
 
 
 
+def patch_human_action_mask():
+    """
+    Patch RouteRL's HumanAgent.act to handle action masking correctly when
+    human_beta is negative.
+    """
+    try:
+        import numpy as np
+        from routerl.environment.agent import HumanAgent, Random
+    except ImportError:
+        return
+
+    def _patched_act(self, observation) -> int:
+        if self.action_mask is not None:
+            if not np.any(self.action_mask):
+                raise ValueError("Action mask must allow at least one route")
+
+            allowed_actions = np.flatnonzero(self.action_mask)
+            original_cost = self.model.cost.copy()
+            masked_cost = original_cost.copy()
+
+            beta = getattr(self.model, "beta", 1.0)
+            mask_val = np.inf if beta < 0 else -np.inf
+            masked_cost[np.asarray(self.action_mask) == 0] = mask_val
+            self.model.cost = masked_cost
+            try:
+                action = self.model.act(observation)
+            except Exception:
+                action = int(np.random.choice(allowed_actions))
+            finally:
+                self.model.cost = original_cost
+
+            if self.action_mask[action] == 0:
+                action = int(np.random.choice(allowed_actions))
+            return action
+        elif self.default_action is not None:
+            return self.default_action
+        else:
+            return self.model.act(observation)
+
+    HumanAgent.act = _patched_act
+
+
+patch_human_action_mask()
+
+
 class CSVLossLogger:
 
     def __init__(self, path: str, columns: list[str]):
