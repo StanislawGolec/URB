@@ -17,5 +17,6 @@
     "share_params_agent": true,
     "use_route_congestion_encoder": true,
     "share_parameters_critic": false,
-    "mappo": true
+    "mappo": true,
+    "od_embedding_dim": 8
 }

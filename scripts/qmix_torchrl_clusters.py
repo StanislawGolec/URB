@@ -4,6 +4,7 @@ The QMIX implementation is based on: https://github.com/pytorch/rl/blob/main/sot
 """
 
 import os
+import wandb
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
@@ -127,7 +128,10 @@ if __name__ == "__main__":
      
     # Parameter setting
     params = dict()
-    alg_params = json.load(open(f"../config/algo_config/{ALGORITHM}/{alg_config}.json"))
+    alg_config_path = f"../config/algo_config/qmix_torchrl_clusters/{alg_config}.json"
+    if not os.path.exists(alg_config_path):
+        alg_config_path = f"../config/algo_config/{ALGORITHM}/{alg_config}.json"
+    alg_params = json.load(open(alg_config_path))
     env_params = json.load(open(f"../config/env_config/{env_config}.json"))
     task_params = json.load(open(f"../config/task_config/{task_config}.json"))
     params.update(alg_params)
@@ -230,6 +234,16 @@ if __name__ == "__main__":
 
     with open(exp_config_path, 'w', encoding='utf-8') as f:
         json.dump(dump_config, f, indent=4)
+
+    # Initiate W&B Tracking
+    wandb.init(
+        project="URB-Traffic-Routing",
+        entity="aintern26coexistence",
+        name=exp_id,
+        group=f"{ALGORITHM}_{network}",
+        tags=[ALGORITHM, network, task_config, alg_config, "clusters"],
+        config=dump_config,
+    )
 
     # Initiate the traffic environment
     env = TrafficEnvironment(
@@ -511,6 +525,17 @@ if __name__ == "__main__":
                     "loss": loss,
                 }
             )
+
+            # wandb logging
+            current_eps = qnet_explore[1].eps.item() if hasattr(qnet_explore[1], "eps") else 0.0
+            mean_reward = tensordict_data.get(("next", "episode_reward")).mean().item()
+
+            wandb.log({
+                "train/loss": loss,
+                "train/mean_reward": mean_reward,
+                "train/epsilon": current_eps,
+                "iteration": len(loss_records),
+            })
         qnet_explore[1].step(frames=current_frames)  # Update exploration annealing
         collector.update_policy_weights_()
         pbar.update()
@@ -540,3 +565,11 @@ if __name__ == "__main__":
 
     clear_SUMO_files(os.path.join(records_folder, "SUMO_output"), os.path.join(records_folder, "episodes"), remove_additional_files=True)
     run_metrics_analysis(exp_id, results_folder="../results")
+
+    # wandb uploading
+    if os.path.exists(plots_folder):
+        for plot_file in os.listdir(plots_folder):
+            if plot_file.endswith(".png"):
+                plot_path = os.path.join(plots_folder, plot_file)
+                wandb.log({f"plots/{plot_file.replace('.png', '')}": wandb.Image(plot_path)})
+    wandb.finish()
