@@ -1,7 +1,8 @@
 #!/bin/bash
 #SBATCH --job-name=qmix_ing2_alt10_s43
 #SBATCH --partition=student
-#SBATCH --qos=quick
+#SBATCH --qos=big
+#SBATCH --time=7-00:00:00
 #SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
