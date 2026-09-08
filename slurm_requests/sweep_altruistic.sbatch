@@ -2,7 +2,7 @@
 #SBATCH --job-name=qmix_alt_sweep
 #SBATCH --partition=student
 #SBATCH --qos=big
-#SBATCH --time=3-00:00:00
+#SBATCH --time=4-00:00:00
 #SBATCH --mem=32G
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
