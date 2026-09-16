@@ -16,6 +16,28 @@ except ImportError:
 
 
 
+def enable_custom_behavior_coefficients():
+    """
+    Ensure RouteRL's MachineAgent supports custom 4-element reward coefficient
+    vectors (matching RouteRL commit e4b8515 by Onur Akman).
+    """
+    try:
+        from routerl.environment.agent import MachineAgent
+        orig_get_reward_coefs = MachineAgent._get_reward_coefs
+
+        def _custom_get_reward_coefs(self):
+            if isinstance(self.behavior, (list, tuple)) and len(self.behavior) == 4:
+                return tuple(self.behavior)
+            return orig_get_reward_coefs(self)
+
+        MachineAgent._get_reward_coefs = _custom_get_reward_coefs
+    except ImportError:
+        pass
+
+
+enable_custom_behavior_coefficients()
+
+
 class CSVLossLogger:
 
     def __init__(self, path: str, columns: list[str]):

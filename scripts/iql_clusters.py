@@ -25,6 +25,8 @@ from tqdm            import tqdm
 from baseline_models import BaseLearningModel
 from utils           import clear_SUMO_files
 from utils           import print_agent_counts
+from utils           import run_metrics_analysis
+from utils           import init_wandb, finish_wandb, wandb
 
 from clustered_routes import AVMaskWrapper, ClusteredRoutesLoader, resolve_route_set
 
@@ -291,6 +293,17 @@ if __name__ == "__main__":
     with open(exp_config_path, 'w', encoding='utf-8') as f:
         json.dump(dump_config, f, indent=4)
 
+    # Initiate W&B Tracking
+    init_wandb(
+        exp_id=exp_id,
+        algorithm=ALGORITHM,
+        network=network,
+        task_config=task_config,
+        alg_config=alg_config,
+        dump_config=dump_config,
+        extra_tags=["clusters"],
+    )
+
     # Initialize the environment
     env = TrafficEnvironment(
         seed = env_seed,
@@ -383,6 +396,13 @@ if __name__ == "__main__":
             
         if episode % plot_every == 0:
             env.plot_results()
+
+        if wandb is not None and getattr(wandb, "run", None) is not None:
+            eps_val = env.machine_agents[0].model.epsilon if env.machine_agents else 0.0
+            wandb.log({
+                "train/epsilon": eps_val,
+                "episode": episode + 1,
+            })
         pbar.update()
     
     
@@ -410,3 +430,5 @@ if __name__ == "__main__":
     losses_pd.to_csv(os.path.join(records_folder, "losses.csv"), index=False)
     env.stop_simulation()
     clear_SUMO_files(os.path.join(records_folder, "SUMO_output"), os.path.join(records_folder, "episodes"), remove_additional_files=True)
+    run_metrics_analysis(exp_id, results_folder="../results")
+    finish_wandb(exp_id, records_folder=records_folder, results_folder="../results")
