@@ -1,0 +1,430 @@
+GPU 0: NVIDIA GeForce RTX 2080 Ti (UUID: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50)
+==========================================================
+Starting Job: qmix_clusters_mixed_reward_ind85_all15_ing2_s42
+Algorithm:    qmix_clusters (scripts/qmix_torchrl_clusters.py)
+Task Config:  mixed_reward_ind85_all15
+Array Task:   2 / 16
+==========================================================
+--- Starting: python -u scripts/qmix_torchrl_clusters.py --id qmix_clusters_mixed_reward_ind85_all15_ing2_s42 --alg-conf config1 --env-conf clusters_eta --task-conf mixed_reward_ind85_all15 --net ingolstadt_custom2 --env-seed 42 --torch-seed 42 ---
+### STARTING EXPERIMENT ###
+Algorithm: QMIX_TORCHRL
+Experiment ID: qmix_clusters_mixed_reward_ind85_all15_ing2_s42
+Network: ingolstadt_custom2
+Environment seed: 42
+PyTorch seed: 42
+Algorithm config: config1
+Environment config: clusters_eta
+Task config: mixed_reward_ind85_all15
+Requested route set: network default
+Shuffle: False
+Device: cuda:0 (NVIDIA GeForce RTX 2080 Ti)
+Route set: default-pre-integration
+[ClusteredRoutesLoader] Loaded 306 OD pairs with 4 routes each
+[ClusteredRoutesLoader] Exported 1156 routes to ../results/qmix_clusters_mixed_reward_ind85_all15_ing2_s42/paths.csv
+[ClusteredRoutesLoader] Exported 1156 routes to ../results/qmix_clusters_mixed_reward_ind85_all15_ing2_s42/routes.csv
+[ClusteredRoutesLoader] Exported 1156 routes to ../results/qmix_clusters_mixed_reward_ind85_all15_ing2_s42/route.rou.xml
+[ClusteredRoutesLoader] Loaded action masks for 306 agents from ../networks/ingolstadt_custom2/clustered_routes/default-pre-integration/ingolstadt_custom2_action_masks.csv
+[W&B WARNING] wandb online init failed (No API key configured. Use `wandb login` to log in.). Falling back to offline mode.
+wandb: Tracking run with wandb version 0.29.0
+wandb: W&B syncing is set to `offline` in this directory. Run `wandb online` or set WANDB_MODE=online to enable cloud syncing.
+wandb: Run data is saved locally in /app/scripts/wandb/offline-run-20260916_210543-gxctctnt
+wandb: View this run in the terminal with `wandb leet`
+[W&B] Initialized run 'qmix_clusters_mixed_reward_ind85_all15_ing2_s42' in offline mode.
+[CONFIRMED] Environment variable exists: SUMO_HOME
+[SUCCESS] Added module directory: /usr/share/sumo/tools
+
+    ----------------------------------------------------
+                    Agents in traffic
+    ----------------------------------------------------
+    Total agents           | 1035
+    Human agents           | 1035
+    AV agents              | 0
+    ----------------------------------------------------
+    
+ Retrying in 1 seconds
+Warning: Could not set locale to 'C'.
+Human learning:   0%|          | 0/300 [00:00<?, ?it/s]Warning: Could not set locale to 'C'.
+Human learning:   0%|          | 1/300 [00:30<2:30:12, 30.14s/it]Warning: Could not set locale to 'C'.
+Human learning:   1%|          | 2/300 [01:03<2:37:53, 31.79s/it]Warning: Could not set locale to 'C'.
+Human learning:   1%|          | 3/300 [01:35<2:39:20, 32.19s/it]Warning: Could not set locale to 'C'.
+Human learning:   1%|▏         | 4/300 [02:11<2:45:55, 33.63s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:   2%|▏         | 5/300 [02:44<2:43:37, 33.28s/it]Human learning:   2%|▏         | 6/300 [03:15<2:39:03, 32.46s/it]Warning: Could not set locale to 'C'.
+Human learning:   2%|▏         | 7/300 [03:46<2:36:21, 32.02s/it]Warning: Could not set locale to 'C'.
+Human learning:   3%|▎         | 8/300 [04:18<2:36:26, 32.15s/it]Warning: Could not set locale to 'C'.
+Human learning:   3%|▎         | 9/300 [04:50<2:35:26, 32.05s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:   3%|▎         | 10/300 [05:22<2:34:58, 32.06s/it]Human learning:   4%|▎         | 11/300 [05:53<2:32:53, 31.74s/it]Warning: Could not set locale to 'C'.
+Human learning:   4%|▍         | 12/300 [06:27<2:35:10, 32.33s/it]Warning: Could not set locale to 'C'.
+Human learning:   4%|▍         | 13/300 [07:04<2:41:48, 33.83s/it]Warning: Could not set locale to 'C'.
+Human learning:   5%|▍         | 14/300 [07:41<2:45:49, 34.79s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:   5%|▌         | 15/300 [08:17<2:46:23, 35.03s/it]Human learning:   5%|▌         | 16/300 [08:49<2:41:50, 34.19s/it]Warning: Could not set locale to 'C'.
+Human learning:   6%|▌         | 17/300 [09:23<2:41:45, 34.30s/it]Warning: Could not set locale to 'C'.
+Human learning:   6%|▌         | 18/300 [09:57<2:39:32, 33.94s/it]Warning: Could not set locale to 'C'.
+Human learning:   6%|▋         | 19/300 [10:27<2:34:06, 32.90s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:   7%|▋         | 20/300 [10:58<2:31:30, 32.47s/it]Human learning:   7%|▋         | 21/300 [11:30<2:29:36, 32.17s/it]Warning: Could not set locale to 'C'.
+Human learning:   7%|▋         | 22/300 [12:01<2:28:07, 31.97s/it]Warning: Could not set locale to 'C'.
+Human learning:   8%|▊         | 23/300 [12:32<2:25:22, 31.49s/it]Warning: Could not set locale to 'C'.
+Human learning:   8%|▊         | 24/300 [13:05<2:26:31, 31.85s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:   8%|▊         | 25/300 [13:35<2:24:00, 31.42s/it]Human learning:   9%|▊         | 26/300 [14:08<2:26:06, 32.00s/it]Warning: Could not set locale to 'C'.
+Human learning:   9%|▉         | 27/300 [14:41<2:27:13, 32.36s/it]Warning: Could not set locale to 'C'.
+Human learning:   9%|▉         | 28/300 [15:13<2:26:10, 32.24s/it]Warning: Could not set locale to 'C'.
+Human learning:  10%|▉         | 29/300 [15:45<2:24:10, 31.92s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  10%|█         | 30/300 [16:19<2:26:42, 32.60s/it]Human learning:  10%|█         | 31/300 [16:58<2:35:21, 34.65s/it]Warning: Could not set locale to 'C'.
+Human learning:  11%|█         | 32/300 [17:33<2:35:13, 34.75s/it]Warning: Could not set locale to 'C'.
+Human learning:  11%|█         | 33/300 [18:06<2:32:35, 34.29s/it]Warning: Could not set locale to 'C'.
+Human learning:  11%|█▏        | 34/300 [18:37<2:27:40, 33.31s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  12%|█▏        | 35/300 [19:09<2:24:52, 32.80s/it]Human learning:  12%|█▏        | 36/300 [19:40<2:22:10, 32.31s/it]Warning: Could not set locale to 'C'.
+Human learning:  12%|█▏        | 37/300 [20:14<2:23:09, 32.66s/it]Warning: Could not set locale to 'C'.
+Human learning:  13%|█▎        | 38/300 [20:47<2:23:49, 32.94s/it]Warning: Could not set locale to 'C'.
+Human learning:  13%|█▎        | 39/300 [21:19<2:21:00, 32.42s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  13%|█▎        | 40/300 [21:52<2:21:51, 32.74s/it]Human learning:  14%|█▎        | 41/300 [22:27<2:24:05, 33.38s/it]Warning: Could not set locale to 'C'.
+Human learning:  14%|█▍        | 42/300 [23:01<2:24:59, 33.72s/it]Warning: Could not set locale to 'C'.
+Human learning:  14%|█▍        | 43/300 [23:32<2:19:56, 32.67s/it]Warning: Could not set locale to 'C'.
+Human learning:  15%|█▍        | 44/300 [24:02<2:16:03, 31.89s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  15%|█▌        | 45/300 [24:45<2:30:20, 35.37s/it]Human learning:  15%|█▌        | 46/300 [25:23<2:32:41, 36.07s/it]Warning: Could not set locale to 'C'.
+Human learning:  16%|█▌        | 47/300 [25:55<2:27:17, 34.93s/it]Warning: Could not set locale to 'C'.
+Human learning:  16%|█▌        | 48/300 [26:25<2:20:41, 33.50s/it]Warning: Could not set locale to 'C'.
+Human learning:  16%|█▋        | 49/300 [27:02<2:24:12, 34.47s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  17%|█▋        | 50/300 [27:39<2:27:12, 35.33s/it]Human learning:  17%|█▋        | 51/300 [28:11<2:22:30, 34.34s/it]Warning: Could not set locale to 'C'.
+Human learning:  17%|█▋        | 52/300 [28:41<2:16:36, 33.05s/it]Warning: Could not set locale to 'C'.
+Human learning:  18%|█▊        | 53/300 [29:13<2:14:01, 32.56s/it]Warning: Could not set locale to 'C'.
+Human learning:  18%|█▊        | 54/300 [29:44<2:12:07, 32.22s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  18%|█▊        | 55/300 [30:14<2:08:35, 31.49s/it]Human learning:  19%|█▊        | 56/300 [30:48<2:10:51, 32.18s/it]Warning: Could not set locale to 'C'.
+Human learning:  19%|█▉        | 57/300 [31:19<2:09:15, 31.92s/it]Warning: Could not set locale to 'C'.
+Human learning:  19%|█▉        | 58/300 [31:51<2:08:59, 31.98s/it]Warning: Could not set locale to 'C'.
+Human learning:  20%|█▉        | 59/300 [32:23<2:07:58, 31.86s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  20%|██        | 60/300 [32:57<2:10:03, 32.52s/it]Human learning:  20%|██        | 61/300 [33:27<2:06:07, 31.66s/it]Warning: Could not set locale to 'C'.
+Human learning:  21%|██        | 62/300 [33:56<2:03:25, 31.11s/it]Warning: Could not set locale to 'C'.
+Human learning:  21%|██        | 63/300 [34:33<2:09:35, 32.81s/it]Warning: Could not set locale to 'C'.
+Human learning:  21%|██▏       | 64/300 [35:02<2:04:43, 31.71s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  22%|██▏       | 65/300 [35:35<2:05:02, 31.93s/it]Human learning:  22%|██▏       | 66/300 [36:09<2:07:37, 32.72s/it]Warning: Could not set locale to 'C'.
+Human learning:  22%|██▏       | 67/300 [36:42<2:07:22, 32.80s/it]Warning: Could not set locale to 'C'.
+Human learning:  23%|██▎       | 68/300 [37:14<2:05:37, 32.49s/it]Warning: Could not set locale to 'C'.
+Human learning:  23%|██▎       | 69/300 [37:44<2:02:17, 31.76s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  23%|██▎       | 70/300 [38:14<1:59:46, 31.25s/it]Human learning:  24%|██▎       | 71/300 [38:45<1:58:27, 31.04s/it]Warning: Could not set locale to 'C'.
+Human learning:  24%|██▍       | 72/300 [39:20<2:02:43, 32.30s/it]Warning: Could not set locale to 'C'.
+Human learning:  24%|██▍       | 73/300 [39:52<2:01:55, 32.23s/it]Warning: Could not set locale to 'C'.
+Human learning:  25%|██▍       | 74/300 [40:21<1:57:52, 31.29s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  25%|██▌       | 75/300 [40:51<1:55:25, 30.78s/it]Human learning:  25%|██▌       | 76/300 [41:22<1:54:55, 30.78s/it]Warning: Could not set locale to 'C'.
+Human learning:  26%|██▌       | 77/300 [41:54<1:56:19, 31.30s/it]Warning: Could not set locale to 'C'.
+Human learning:  26%|██▌       | 78/300 [42:28<1:58:43, 32.09s/it]Warning: Could not set locale to 'C'.
+Human learning:  26%|██▋       | 79/300 [42:58<1:55:21, 31.32s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  27%|██▋       | 80/300 [43:29<1:55:11, 31.41s/it]Human learning:  27%|██▋       | 81/300 [43:59<1:52:45, 30.89s/it]Warning: Could not set locale to 'C'.
+Human learning:  27%|██▋       | 82/300 [44:30<1:52:34, 30.98s/it]Warning: Could not set locale to 'C'.
+Human learning:  28%|██▊       | 83/300 [45:01<1:51:32, 30.84s/it]Warning: Could not set locale to 'C'.
+Human learning:  28%|██▊       | 84/300 [45:32<1:52:00, 31.11s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  28%|██▊       | 85/300 [46:03<1:50:47, 30.92s/it]Human learning:  29%|██▊       | 86/300 [46:33<1:49:08, 30.60s/it]Warning: Could not set locale to 'C'.
+Human learning:  29%|██▉       | 87/300 [47:06<1:51:22, 31.37s/it]Warning: Could not set locale to 'C'.
+Human learning:  29%|██▉       | 88/300 [47:39<1:52:57, 31.97s/it]Warning: Could not set locale to 'C'.
+Human learning:  30%|██▉       | 89/300 [48:09<1:50:18, 31.37s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  30%|███       | 90/300 [48:43<1:52:15, 32.07s/it]Human learning:  30%|███       | 91/300 [49:14<1:50:34, 31.75s/it]Warning: Could not set locale to 'C'.
+Human learning:  31%|███       | 92/300 [49:46<1:50:14, 31.80s/it]Warning: Could not set locale to 'C'.
+Human learning:  31%|███       | 93/300 [50:17<1:49:03, 31.61s/it]Warning: Could not set locale to 'C'.
+Human learning:  31%|███▏      | 94/300 [50:48<1:47:47, 31.39s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  32%|███▏      | 95/300 [51:23<1:51:18, 32.58s/it]Human learning:  32%|███▏      | 96/300 [51:53<1:48:04, 31.79s/it]Warning: Could not set locale to 'C'.
+Human learning:  32%|███▏      | 97/300 [52:26<1:49:02, 32.23s/it]Warning: Could not set locale to 'C'.
+Human learning:  33%|███▎      | 98/300 [53:02<1:52:17, 33.35s/it]Warning: Could not set locale to 'C'.
+Human learning:  33%|███▎      | 99/300 [53:33<1:49:14, 32.61s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  33%|███▎      | 100/300 [54:09<1:52:12, 33.66s/it]Warning: Vehicle '54' performs emergency braking on lane '201201953#2_1' with decel=9.00, wished=4.50, severity=1.00, time=252.00.
+Human learning:  34%|███▎      | 101/300 [54:39<1:47:59, 32.56s/it]Warning: Could not set locale to 'C'.
+Human learning:  34%|███▍      | 102/300 [55:09<1:44:20, 31.62s/it]Warning: Could not set locale to 'C'.
+Human learning:  34%|███▍      | 103/300 [55:38<1:41:30, 30.92s/it]Warning: Could not set locale to 'C'.
+Human learning:  35%|███▍      | 104/300 [56:09<1:40:42, 30.83s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  35%|███▌      | 105/300 [56:43<1:43:37, 31.89s/it]Human learning:  35%|███▌      | 106/300 [57:19<1:47:26, 33.23s/it]Warning: Could not set locale to 'C'.
+Human learning:  36%|███▌      | 107/300 [57:53<1:46:56, 33.25s/it]Warning: Could not set locale to 'C'.
+Human learning:  36%|███▌      | 108/300 [58:25<1:45:33, 32.99s/it]Warning: Could not set locale to 'C'.
+Human learning:  36%|███▋      | 109/300 [58:56<1:43:29, 32.51s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  37%|███▋      | 110/300 [59:27<1:41:03, 31.91s/it]Human learning:  37%|███▋      | 111/300 [1:00:00<1:42:03, 32.40s/it]Warning: Could not set locale to 'C'.
+Human learning:  37%|███▋      | 112/300 [1:00:35<1:43:07, 32.91s/it]Warning: Could not set locale to 'C'.
+Human learning:  38%|███▊      | 113/300 [1:01:06<1:40:58, 32.40s/it]Warning: Could not set locale to 'C'.
+Human learning:  38%|███▊      | 114/300 [1:01:40<1:42:09, 32.95s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  38%|███▊      | 115/300 [1:02:11<1:39:21, 32.22s/it]Human learning:  39%|███▊      | 116/300 [1:02:40<1:36:38, 31.51s/it]Warning: Could not set locale to 'C'.
+Human learning:  39%|███▉      | 117/300 [1:03:10<1:34:36, 31.02s/it]Warning: Could not set locale to 'C'.
+Human learning:  39%|███▉      | 118/300 [1:03:43<1:36:01, 31.66s/it]Warning: Could not set locale to 'C'.
+Human learning:  40%|███▉      | 119/300 [1:04:15<1:35:27, 31.64s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  40%|████      | 120/300 [1:04:48<1:35:45, 31.92s/it]Human learning:  40%|████      | 121/300 [1:05:20<1:35:50, 32.12s/it]Warning: Could not set locale to 'C'.
+Human learning:  41%|████      | 122/300 [1:05:51<1:34:30, 31.86s/it]Warning: Could not set locale to 'C'.
+Human learning:  41%|████      | 123/300 [1:06:24<1:34:19, 31.98s/it]Warning: Could not set locale to 'C'.
+Human learning:  41%|████▏     | 124/300 [1:06:56<1:34:10, 32.11s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  42%|████▏     | 125/300 [1:07:26<1:31:38, 31.42s/it]Human learning:  42%|████▏     | 126/300 [1:07:56<1:30:14, 31.12s/it]Warning: Could not set locale to 'C'.
+Human learning:  42%|████▏     | 127/300 [1:08:34<1:35:35, 33.15s/it]Warning: Could not set locale to 'C'.
+Human learning:  43%|████▎     | 128/300 [1:09:06<1:33:58, 32.78s/it]Warning: Could not set locale to 'C'.
+Human learning:  43%|████▎     | 129/300 [1:09:39<1:33:22, 32.76s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  43%|████▎     | 130/300 [1:10:11<1:32:11, 32.54s/it]Human learning:  44%|████▎     | 131/300 [1:10:44<1:32:16, 32.76s/it]Warning: Could not set locale to 'C'.
+Human learning:  44%|████▍     | 132/300 [1:11:18<1:32:30, 33.04s/it]Warning: Could not set locale to 'C'.
+Human learning:  44%|████▍     | 133/300 [1:11:49<1:30:42, 32.59s/it]Warning: Could not set locale to 'C'.
+Human learning:  45%|████▍     | 134/300 [1:12:19<1:27:32, 31.64s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  45%|████▌     | 135/300 [1:12:49<1:25:42, 31.17s/it]Human learning:  45%|████▌     | 136/300 [1:13:21<1:26:10, 31.53s/it]Warning: Could not set locale to 'C'.
+Human learning:  46%|████▌     | 137/300 [1:13:59<1:30:46, 33.41s/it]Warning: Could not set locale to 'C'.
+Human learning:  46%|████▌     | 138/300 [1:14:29<1:27:49, 32.53s/it]Warning: Could not set locale to 'C'.
+Human learning:  46%|████▋     | 139/300 [1:14:59<1:24:47, 31.60s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  47%|████▋     | 140/300 [1:15:30<1:23:59, 31.50s/it]Human learning:  47%|████▋     | 141/300 [1:16:00<1:22:14, 31.04s/it]Warning: Could not set locale to 'C'.
+Human learning:  47%|████▋     | 142/300 [1:16:30<1:20:59, 30.75s/it]Warning: Could not set locale to 'C'.
+Human learning:  48%|████▊     | 143/300 [1:17:02<1:21:37, 31.20s/it]Warning: Could not set locale to 'C'.
+Human learning:  48%|████▊     | 144/300 [1:17:36<1:23:17, 32.04s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  48%|████▊     | 145/300 [1:18:09<1:23:23, 32.28s/it]Human learning:  49%|████▊     | 146/300 [1:18:39<1:20:58, 31.55s/it]Warning: Could not set locale to 'C'.
+Human learning:  49%|████▉     | 147/300 [1:19:11<1:20:28, 31.56s/it]Warning: Could not set locale to 'C'.
+Human learning:  49%|████▉     | 148/300 [1:19:46<1:22:29, 32.56s/it]Warning: Could not set locale to 'C'.
+Human learning:  50%|████▉     | 149/300 [1:20:17<1:21:02, 32.20s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  50%|█████     | 150/300 [1:20:48<1:19:38, 31.86s/it]Human learning:  50%|█████     | 151/300 [1:21:22<1:20:19, 32.34s/it]Warning: Could not set locale to 'C'.
+Human learning:  51%|█████     | 152/300 [1:21:54<1:20:00, 32.44s/it]Warning: Could not set locale to 'C'.
+Human learning:  51%|█████     | 153/300 [1:22:27<1:19:28, 32.44s/it]Warning: Could not set locale to 'C'.
+Human learning:  51%|█████▏    | 154/300 [1:23:01<1:20:24, 33.05s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  52%|█████▏    | 155/300 [1:23:32<1:18:05, 32.32s/it]Human learning:  52%|█████▏    | 156/300 [1:24:01<1:15:11, 31.33s/it]Warning: Could not set locale to 'C'.
+Human learning:  52%|█████▏    | 157/300 [1:24:31<1:14:12, 31.14s/it]Warning: Could not set locale to 'C'.
+Human learning:  53%|█████▎    | 158/300 [1:25:02<1:13:09, 30.91s/it]Warning: Could not set locale to 'C'.
+Human learning:  53%|█████▎    | 159/300 [1:25:32<1:12:19, 30.78s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  53%|█████▎    | 160/300 [1:26:04<1:12:45, 31.18s/it]Human learning:  54%|█████▎    | 161/300 [1:26:36<1:12:26, 31.27s/it]Warning: Could not set locale to 'C'.
+Human learning:  54%|█████▍    | 162/300 [1:27:06<1:11:04, 30.90s/it]Warning: Could not set locale to 'C'.
+Human learning:  54%|█████▍    | 163/300 [1:27:37<1:10:24, 30.83s/it]Warning: Could not set locale to 'C'.
+Human learning:  55%|█████▍    | 164/300 [1:28:06<1:09:03, 30.47s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  55%|█████▌    | 165/300 [1:28:37<1:08:39, 30.51s/it]Human learning:  55%|█████▌    | 166/300 [1:29:06<1:07:34, 30.26s/it]Warning: Could not set locale to 'C'.
+Human learning:  56%|█████▌    | 167/300 [1:29:38<1:07:57, 30.66s/it]Warning: Could not set locale to 'C'.
+Human learning:  56%|█████▌    | 168/300 [1:30:08<1:07:13, 30.56s/it]Warning: Could not set locale to 'C'.
+Human learning:  56%|█████▋    | 169/300 [1:30:39<1:06:37, 30.52s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  57%|█████▋    | 170/300 [1:31:10<1:06:19, 30.62s/it]Human learning:  57%|█████▋    | 171/300 [1:31:39<1:05:17, 30.37s/it]Warning: Could not set locale to 'C'.
+Human learning:  57%|█████▋    | 172/300 [1:32:09<1:04:32, 30.26s/it]Warning: Could not set locale to 'C'.
+Human learning:  58%|█████▊    | 173/300 [1:32:41<1:05:07, 30.77s/it]Warning: Could not set locale to 'C'.
+Human learning:  58%|█████▊    | 174/300 [1:33:12<1:04:35, 30.75s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  58%|█████▊    | 175/300 [1:33:45<1:05:30, 31.44s/it]Human learning:  59%|█████▊    | 176/300 [1:34:15<1:03:45, 30.85s/it]Warning: Could not set locale to 'C'.
+Human learning:  59%|█████▉    | 177/300 [1:34:44<1:02:34, 30.52s/it]Warning: Could not set locale to 'C'.
+Human learning:  59%|█████▉    | 178/300 [1:35:14<1:01:25, 30.21s/it]Warning: Could not set locale to 'C'.
+Human learning:  60%|█████▉    | 179/300 [1:35:45<1:01:21, 30.43s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  60%|██████    | 180/300 [1:36:16<1:01:25, 30.71s/it]Human learning:  60%|██████    | 181/300 [1:36:50<1:02:31, 31.52s/it]Warning: Could not set locale to 'C'.
+Human learning:  61%|██████    | 182/300 [1:37:21<1:01:48, 31.43s/it]Warning: Could not set locale to 'C'.
+Human learning:  61%|██████    | 183/300 [1:37:51<1:00:24, 30.98s/it]Warning: Could not set locale to 'C'.
+Human learning:  61%|██████▏   | 184/300 [1:38:20<58:56, 30.49s/it]  Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  62%|██████▏   | 185/300 [1:38:50<58:08, 30.34s/it]Human learning:  62%|██████▏   | 186/300 [1:39:22<58:36, 30.85s/it]Warning: Could not set locale to 'C'.
+Human learning:  62%|██████▏   | 187/300 [1:39:52<57:46, 30.68s/it]Warning: Could not set locale to 'C'.
+Human learning:  63%|██████▎   | 188/300 [1:40:23<57:17, 30.70s/it]Warning: Could not set locale to 'C'.
+Human learning:  63%|██████▎   | 189/300 [1:40:55<57:26, 31.05s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  63%|██████▎   | 190/300 [1:41:26<56:58, 31.08s/it]Human learning:  64%|██████▎   | 191/300 [1:41:56<55:59, 30.82s/it]Warning: Could not set locale to 'C'.
+Human learning:  64%|██████▍   | 192/300 [1:42:26<54:45, 30.42s/it]Warning: Could not set locale to 'C'.
+Human learning:  64%|██████▍   | 193/300 [1:42:58<55:21, 31.04s/it]Warning: Could not set locale to 'C'.
+Human learning:  65%|██████▍   | 194/300 [1:43:31<55:50, 31.61s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  65%|██████▌   | 195/300 [1:44:01<54:15, 31.01s/it]Human learning:  65%|██████▌   | 196/300 [1:44:32<53:40, 30.96s/it]Warning: Could not set locale to 'C'.
+Human learning:  66%|██████▌   | 197/300 [1:45:04<53:34, 31.21s/it]Warning: Could not set locale to 'C'.
+Human learning:  66%|██████▌   | 198/300 [1:45:34<52:43, 31.01s/it]Warning: Could not set locale to 'C'.
+Human learning:  66%|██████▋   | 199/300 [1:46:04<51:37, 30.67s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  67%|██████▋   | 200/300 [1:46:36<51:41, 31.01s/it]Human learning:  67%|██████▋   | 201/300 [1:47:05<50:25, 30.56s/it]Warning: Could not set locale to 'C'.
+Human learning:  67%|██████▋   | 202/300 [1:47:42<53:04, 32.49s/it]Warning: Could not set locale to 'C'.
+Human learning:  68%|██████▊   | 203/300 [1:48:15<52:53, 32.71s/it]Warning: Could not set locale to 'C'.
+Human learning:  68%|██████▊   | 204/300 [1:48:48<52:15, 32.66s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  68%|██████▊   | 205/300 [1:49:18<50:23, 31.82s/it]Human learning:  69%|██████▊   | 206/300 [1:49:48<49:04, 31.32s/it]Warning: Could not set locale to 'C'.
+Human learning:  69%|██████▉   | 207/300 [1:50:19<48:14, 31.12s/it]Warning: Could not set locale to 'C'.
+Human learning:  69%|██████▉   | 208/300 [1:50:49<47:15, 30.82s/it]Warning: Could not set locale to 'C'.
+Human learning:  70%|██████▉   | 209/300 [1:51:18<46:01, 30.34s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  70%|███████   | 210/300 [1:51:50<46:10, 30.78s/it]Human learning:  70%|███████   | 211/300 [1:52:20<45:33, 30.71s/it]Warning: Could not set locale to 'C'.
+Human learning:  71%|███████   | 212/300 [1:52:54<46:07, 31.45s/it]Warning: Could not set locale to 'C'.
+Human learning:  71%|███████   | 213/300 [1:53:26<46:03, 31.76s/it]Warning: Could not set locale to 'C'.
+Human learning:  71%|███████▏  | 214/300 [1:54:02<47:12, 32.94s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  72%|███████▏  | 215/300 [1:54:34<46:13, 32.63s/it]Human learning:  72%|███████▏  | 216/300 [1:55:08<46:16, 33.05s/it]Warning: Could not set locale to 'C'.
+Human learning:  72%|███████▏  | 217/300 [1:55:37<44:19, 32.05s/it]Warning: Could not set locale to 'C'.
+Human learning:  73%|███████▎  | 218/300 [1:56:09<43:44, 32.00s/it]Warning: Could not set locale to 'C'.
+Human learning:  73%|███████▎  | 219/300 [1:56:42<43:31, 32.24s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  73%|███████▎  | 220/300 [1:57:13<42:24, 31.81s/it]Human learning:  74%|███████▎  | 221/300 [1:57:43<41:16, 31.35s/it]Warning: Could not set locale to 'C'.
+Human learning:  74%|███████▍  | 222/300 [1:58:15<40:51, 31.42s/it]Warning: Could not set locale to 'C'.
+Human learning:  74%|███████▍  | 223/300 [1:58:46<40:20, 31.43s/it]Warning: Could not set locale to 'C'.
+Human learning:  75%|███████▍  | 224/300 [1:59:15<38:58, 30.77s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  75%|███████▌  | 225/300 [1:59:45<37:56, 30.36s/it]Human learning:  75%|███████▌  | 226/300 [2:00:15<37:20, 30.28s/it]Warning: Could not set locale to 'C'.
+Human learning:  76%|███████▌  | 227/300 [2:00:51<38:46, 31.87s/it]Warning: Could not set locale to 'C'.
+Human learning:  76%|███████▌  | 228/300 [2:01:24<38:52, 32.40s/it]Warning: Could not set locale to 'C'.
+Human learning:  76%|███████▋  | 229/300 [2:01:55<37:55, 32.05s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  77%|███████▋  | 230/300 [2:02:31<38:31, 33.01s/it]Human learning:  77%|███████▋  | 231/300 [2:03:09<39:50, 34.65s/it]Warning: Could not set locale to 'C'.
+Human learning:  77%|███████▋  | 232/300 [2:03:39<37:34, 33.15s/it]Warning: Could not set locale to 'C'.
+Human learning:  78%|███████▊  | 233/300 [2:04:08<35:49, 32.09s/it]Warning: Could not set locale to 'C'.
+Human learning:  78%|███████▊  | 234/300 [2:04:39<34:40, 31.52s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  78%|███████▊  | 235/300 [2:05:09<33:38, 31.06s/it]Human learning:  79%|███████▊  | 236/300 [2:05:38<32:41, 30.64s/it]Warning: Could not set locale to 'C'.
+Human learning:  79%|███████▉  | 237/300 [2:06:08<31:58, 30.45s/it]Warning: Could not set locale to 'C'.
+Human learning:  79%|███████▉  | 238/300 [2:06:39<31:42, 30.69s/it]Warning: Could not set locale to 'C'.
+Human learning:  80%|███████▉  | 239/300 [2:07:09<30:46, 30.27s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  80%|████████  | 240/300 [2:07:40<30:34, 30.57s/it]Human learning:  80%|████████  | 241/300 [2:08:10<29:52, 30.39s/it]Warning: Could not set locale to 'C'.
+Human learning:  81%|████████  | 242/300 [2:08:44<30:20, 31.38s/it]Warning: Could not set locale to 'C'.
+Human learning:  81%|████████  | 243/300 [2:09:18<30:30, 32.12s/it]Warning: Could not set locale to 'C'.
+Human learning:  81%|████████▏ | 244/300 [2:09:50<30:01, 32.17s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  82%|████████▏ | 245/300 [2:10:21<29:14, 31.91s/it]Human learning:  82%|████████▏ | 246/300 [2:10:53<28:34, 31.75s/it]Warning: Could not set locale to 'C'.
+Human learning:  82%|████████▏ | 247/300 [2:11:23<27:39, 31.31s/it]Warning: Could not set locale to 'C'.
+Human learning:  83%|████████▎ | 248/300 [2:11:52<26:41, 30.79s/it]Warning: Could not set locale to 'C'.
+Human learning:  83%|████████▎ | 249/300 [2:12:24<26:20, 31.00s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  83%|████████▎ | 250/300 [2:12:54<25:34, 30.69s/it]Human learning:  84%|████████▎ | 251/300 [2:13:23<24:44, 30.30s/it]Warning: Could not set locale to 'C'.
+Human learning:  84%|████████▍ | 252/300 [2:13:52<23:50, 29.80s/it]Warning: Could not set locale to 'C'.
+Human learning:  84%|████████▍ | 253/300 [2:14:20<23:02, 29.41s/it]Warning: Could not set locale to 'C'.
+Human learning:  85%|████████▍ | 254/300 [2:14:51<22:44, 29.67s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  85%|████████▌ | 255/300 [2:15:24<23:04, 30.76s/it]Human learning:  85%|████████▌ | 256/300 [2:15:54<22:28, 30.65s/it]Warning: Could not set locale to 'C'.
+Human learning:  86%|████████▌ | 257/300 [2:16:24<21:39, 30.21s/it]Warning: Could not set locale to 'C'.
+Human learning:  86%|████████▌ | 258/300 [2:16:53<20:58, 29.97s/it]Warning: Could not set locale to 'C'.
+Human learning:  86%|████████▋ | 259/300 [2:17:22<20:22, 29.81s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  87%|████████▋ | 260/300 [2:17:56<20:38, 30.95s/it]Human learning:  87%|████████▋ | 261/300 [2:18:29<20:28, 31.50s/it]Warning: Could not set locale to 'C'.
+Human learning:  87%|████████▋ | 262/300 [2:18:57<19:22, 30.59s/it]Warning: Could not set locale to 'C'.
+Human learning:  88%|████████▊ | 263/300 [2:19:33<19:45, 32.03s/it]Warning: Could not set locale to 'C'.
+Human learning:  88%|████████▊ | 264/300 [2:20:07<19:42, 32.85s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  88%|████████▊ | 265/300 [2:20:44<19:45, 33.86s/it]Human learning:  89%|████████▊ | 266/300 [2:21:15<18:50, 33.25s/it]Warning: Could not set locale to 'C'.
+Human learning:  89%|████████▉ | 267/300 [2:21:45<17:43, 32.23s/it]Warning: Could not set locale to 'C'.
+Human learning:  89%|████████▉ | 268/300 [2:22:17<17:07, 32.10s/it]Warning: Could not set locale to 'C'.
+Human learning:  90%|████████▉ | 269/300 [2:22:47<16:19, 31.59s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  90%|█████████ | 270/300 [2:23:19<15:48, 31.63s/it]Human learning:  90%|█████████ | 271/300 [2:23:51<15:22, 31.81s/it]Warning: Could not set locale to 'C'.
+Human learning:  91%|█████████ | 272/300 [2:24:23<14:48, 31.75s/it]Warning: Could not set locale to 'C'.
+Human learning:  91%|█████████ | 273/300 [2:24:54<14:10, 31.50s/it]Warning: Could not set locale to 'C'.
+Human learning:  91%|█████████▏| 274/300 [2:25:24<13:24, 30.95s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  92%|█████████▏| 275/300 [2:25:55<12:55, 31.02s/it]Human learning:  92%|█████████▏| 276/300 [2:26:24<12:12, 30.52s/it]Warning: Could not set locale to 'C'.
+Human learning:  92%|█████████▏| 277/300 [2:26:54<11:37, 30.31s/it]Warning: Could not set locale to 'C'.
+Human learning:  93%|█████████▎| 278/300 [2:27:24<11:04, 30.22s/it]Warning: Could not set locale to 'C'.
+Human learning:  93%|█████████▎| 279/300 [2:27:56<10:47, 30.85s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  93%|█████████▎| 280/300 [2:28:34<10:57, 32.88s/it]Human learning:  94%|█████████▎| 281/300 [2:29:07<10:27, 33.00s/it]Warning: Could not set locale to 'C'.
+Human learning:  94%|█████████▍| 282/300 [2:29:36<09:33, 31.87s/it]Warning: Could not set locale to 'C'.
+Human learning:  94%|█████████▍| 283/300 [2:30:05<08:46, 30.95s/it]Warning: Could not set locale to 'C'.
+Human learning:  95%|█████████▍| 284/300 [2:30:38<08:22, 31.42s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  95%|█████████▌| 285/300 [2:31:12<08:01, 32.12s/it]Human learning:  95%|█████████▌| 286/300 [2:31:43<07:28, 32.02s/it]Warning: Could not set locale to 'C'.
+Human learning:  96%|█████████▌| 287/300 [2:32:14<06:51, 31.65s/it]Warning: Could not set locale to 'C'.
+Human learning:  96%|█████████▌| 288/300 [2:32:48<06:26, 32.24s/it]Warning: Could not set locale to 'C'.
+Human learning:  96%|█████████▋| 289/300 [2:33:17<05:45, 31.43s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  97%|█████████▋| 290/300 [2:33:47<05:09, 30.94s/it]Human learning:  97%|█████████▋| 291/300 [2:34:16<04:33, 30.41s/it]Warning: Could not set locale to 'C'.
+Human learning:  97%|█████████▋| 292/300 [2:34:45<03:59, 29.98s/it]Warning: Could not set locale to 'C'.
+Human learning:  98%|█████████▊| 293/300 [2:35:16<03:30, 30.10s/it]Warning: Could not set locale to 'C'.
+Human learning:  98%|█████████▊| 294/300 [2:35:44<02:58, 29.69s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning:  98%|█████████▊| 295/300 [2:36:13<02:27, 29.40s/it]Human learning:  99%|█████████▊| 296/300 [2:36:42<01:57, 29.41s/it]Warning: Could not set locale to 'C'.
+Human learning:  99%|█████████▉| 297/300 [2:37:14<01:29, 29.90s/it]Warning: Could not set locale to 'C'.
+Human learning:  99%|█████████▉| 298/300 [2:37:43<00:59, 29.84s/it]Warning: Could not set locale to 'C'.
+Human learning: 100%|█████████▉| 299/300 [2:38:14<00:30, 30.27s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Human learning: 100%|██████████| 300/300 [2:38:50<00:00, 31.80s/it]Human learning: 100%|██████████| 300/300 [2:38:50<00:00, 31.77s/it]
+
+    ----------------------------------------------------
+                    Agents in traffic
+    ----------------------------------------------------
+    Total agents           | 1035
+    Human agents           | 621
+    AV agents              | 414
+    ----------------------------------------------------
+    
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/torchrl/envs/common.py:1105: DeprecationWarning: You are querying a non-trivial, single action_spec, i.e., there is only one action known by the environment but it is not named `'action'`. Currently, env.action_spec returns the leaf but for consistency with the setter, this will return the full spec instead (from v0.8 and on).
+  warnings.warn(
+Warning: Could not set locale to 'C'.
+Training:   0%|          | 0/200 [00:00<?, ?it/s]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Traceback (most recent call last):
+  File "/app/scripts/qmix_torchrl_clusters.py", line 531, in <module>
+    optim.step()
+    ~~~~~~~~~~^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/torch/optim/optimizer.py", line 493, in wrapper
+    out = func(*args, **kwargs)
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/torch/optim/optimizer.py", line 91, in _use_grad
+    ret = func(self, *args, **kwargs)
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/torch/optim/adam.py", line 234, in step
+    has_complex = self._init_group(
+        group,
+    ...<5 lines>...
+        state_steps,
+    )
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/torch/optim/adam.py", line 174, in _init_group
+    state["exp_avg"] = torch.zeros_like(
+                       ~~~~~~~~~~~~~~~~^
+        p, memory_format=torch.preserve_format
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 1.84 GiB. GPU 0 has a total capacity of 10.58 GiB of which 1.53 GiB is free. Including non-PyTorch memory, this process has 9.04 GiB memory in use. Of the allocated memory 8.60 GiB is allocated by PyTorch, and 238.21 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[1;34mwandb[0m: 
+[1;34mwandb[0m: You can sync this run to the cloud by running:
+[1;34mwandb[0m: [1mwandb sync /app/scripts/wandb/offline-run-20260916_210543-gxctctnt[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/offline-run-20260916_210543-gxctctnt/logs[0m
+Error: tcpip::Socket::recvAndCheck @ recv: peer shutdown
+Quitting (on error).

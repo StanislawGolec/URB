@@ -1,0 +1,67 @@
+GPU 0: NVIDIA GeForce RTX 2080 Ti (UUID: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50)
+### STARTING EXPERIMENT ###
+Algorithm: QMIX_TORCHRL
+Experiment ID: test_qmix_sa
+Network: saint_arnoult
+Environment seed: 42
+PyTorch seed: 42
+Algorithm config: test
+Environment config: test
+Task config: test
+Requested route set: network default
+Shuffle: False
+Device: cuda:0 (NVIDIA GeForce RTX 2080 Ti)
+Route set: saint_arnoult-default-kmeans-4
+[ClusteredRoutesLoader] Loaded 215 OD pairs with 4 routes each
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/paths.csv
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/routes.csv
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/route.rou.xml
+[ClusteredRoutesLoader] Loaded action masks for 215 agents from ../networks/saint_arnoult/clustered_routes/saint_arnoult-default-kmeans-4/saint_arnoult_action_masks.csv
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stanislawgolec to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 72v028lp
+wandb: Tracking run with wandb version 0.29.0
+wandb: Run data is saved locally in /home/z1220859/URB/scripts/wandb/run-20260907_140756-72v028lp
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run test_qmix_sa
+wandb: ⭐️ View project at https://wandb.ai/aintern26coexistence/URB-Traffic-Routing
+wandb: 🚀 View run at https://wandb.ai/aintern26coexistence/URB-Traffic-Routing/runs/72v028lp
+[CONFIRMED] Environment variable exists: SUMO_HOME
+[SUCCESS] Added module directory: /home/z1220859/miniconda3/envs/URB/share/sumo/tools
+
+    ----------------------------------------------------
+                    Agents in traffic
+    ----------------------------------------------------
+    Total agents           | 222
+    Human agents           | 222
+    AV agents              | 0
+    ----------------------------------------------------
+    
+Traceback (most recent call last):
+  File "/home/z1220859/URB/scripts/qmix_torchrl_clusters.py", line 309, in <module>
+    env.start()
+    ~~~~~~~~~^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/routerl/environment/environment.py", line 467, in start
+    self.simulator.start()
+    ~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/routerl/environment/simulator.py", line 408, in start
+    traci.start(sumo_cmd, label=self.sumo_id)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/traci/main.py", line 145, in start
+    sumoProcess = subprocess.Popen(cmd2, stdout=stdout)
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/subprocess.py", line 1991, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'sumo'
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mtest_qmix_sa[0m at: [34mhttps://wandb.ai/aintern26coexistence/URB-Traffic-Routing/runs/72v028lp[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20260907_140756-72v028lp/logs[0m

@@ -1,0 +1,65 @@
+GPU 0: NVIDIA GeForce RTX 2080 Ti (UUID: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50)
+### STARTING EXPERIMENT ###
+Algorithm: QMIX_TORCHRL
+Experiment ID: test_qmix_sa
+Network: saint_arnoult
+Environment seed: 42
+PyTorch seed: 42
+Algorithm config: test
+Environment config: test
+Task config: test
+Requested route set: network default
+Shuffle: False
+Device: cuda:0 (NVIDIA GeForce RTX 2080 Ti)
+Route set: saint_arnoult-default-kmeans-4
+[ClusteredRoutesLoader] Loaded 215 OD pairs with 4 routes each
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/paths.csv
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/routes.csv
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/route.rou.xml
+[ClusteredRoutesLoader] Loaded action masks for 215 agents from ../networks/saint_arnoult/clustered_routes/saint_arnoult-default-kmeans-4/saint_arnoult_action_masks.csv
+Traceback (most recent call last):
+  File "/home/z1220859/URB/scripts/qmix_torchrl_clusters.py", line 250, in <module>
+    wandb.init(
+    ~~~~~~~~~~^
+        project="URB-Traffic-Routing",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        config=dump_config,
+        ^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/sdk/wandb_init.py", line 1557, in init
+    telemetry_recorder.reraise(e)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/analytics/opentelemetry/opentelemetry_proxy.py", line 354, in reraise
+    raise exc
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/sdk/wandb_init.py", line 1468, in init
+    wi.maybe_login(init_settings)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/sdk/wandb_init.py", line 210, in maybe_login
+    wandb_login._login(
+    ~~~~~~~~~~~~~~~~~~^
+        host=run_settings.base_url,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+        update_api_key=explicit_key is None,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/sdk/wandb_login.py", line 195, in _login
+    auth = _find_or_prompt_for_key(
+        settings,
+    ...<5 lines>...
+        verify=verify,
+    )
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/sdk/wandb_login.py", line 275, in _find_or_prompt_for_key
+    auth = wbauth.authenticate_session(
+        host=host,
+    ...<6 lines>...
+        verify=verify,
+    )
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/wandb/sdk/lib/wbauth/authenticate.py", line 129, in authenticate_session
+    raise UsageError(
+        "No API key configured. Use `wandb login` to log in."
+    ) from None
+wandb.errors.errors.UsageError: No API key configured. Use `wandb login` to log in.

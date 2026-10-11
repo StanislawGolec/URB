@@ -1,0 +1,132 @@
+GPU 0: NVIDIA GeForce RTX 2080 Ti (UUID: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50)
+### STARTING EXPERIMENT ###
+Algorithm: QMIX_TORCHRL
+Experiment ID: test_qmix_sa
+Network: saint_arnoult
+Environment seed: 42
+PyTorch seed: 42
+Algorithm config: test
+Environment config: test
+Task config: test
+Requested route set: network default
+Shuffle: False
+Device: cuda:0 (NVIDIA GeForce RTX 2080 Ti)
+Route set: saint_arnoult-default-kmeans-4
+[ClusteredRoutesLoader] Loaded 215 OD pairs with 4 routes each
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/paths.csv
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/routes.csv
+[ClusteredRoutesLoader] Exported 806 routes to ../results/test_qmix_sa/route.rou.xml
+[ClusteredRoutesLoader] Loaded action masks for 215 agents from ../networks/saint_arnoult/clustered_routes/saint_arnoult-default-kmeans-4/saint_arnoult_action_masks.csv
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stanislawgolec to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run bgwmwzva
+wandb: Tracking run with wandb version 0.29.0
+wandb: Run data is saved locally in /home/z1220859/URB/scripts/wandb/run-20260907_142313-bgwmwzva
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run test_qmix_sa
+wandb: ⭐️ View project at https://wandb.ai/aintern26coexistence/URB-Traffic-Routing
+wandb: 🚀 View run at https://wandb.ai/aintern26coexistence/URB-Traffic-Routing/runs/bgwmwzva
+[CONFIRMED] Environment variable exists: SUMO_HOME
+[SUCCESS] Added module directory: /usr/share/sumo/tools
+
+    ----------------------------------------------------
+                    Agents in traffic
+    ----------------------------------------------------
+    Total agents           | 222
+    Human agents           | 222
+    AV agents              | 0
+    ----------------------------------------------------
+    
+ Retrying in 1 seconds
+Could not connect to TraCI server at localhost:37283 [Errno 111] Connection refused
+ Retrying in 1 seconds
+Warning: Could not set locale to 'C'.
+Human learning:   0%|          | 0/10 [00:00<?, ?it/s]Warning: Could not set locale to 'C'.
+Human learning:  10%|█         | 1/10 [00:04<00:40,  4.50s/it]Warning: Could not set locale to 'C'.
+Human learning:  20%|██        | 2/10 [00:08<00:35,  4.45s/it]Warning: Could not set locale to 'C'.
+Human learning:  30%|███       | 3/10 [00:13<00:31,  4.43s/it]Warning: Could not set locale to 'C'.
+Human learning:  40%|████      | 4/10 [00:17<00:26,  4.47s/it]Warning: Could not set locale to 'C'.
+Human learning:  50%|█████     | 5/10 [00:22<00:22,  4.48s/it]Warning: Could not set locale to 'C'.
+Human learning:  60%|██████    | 6/10 [00:25<00:15,  3.99s/it]Warning: Could not set locale to 'C'.
+Human learning:  70%|███████   | 7/10 [00:29<00:12,  4.15s/it]Warning: Could not set locale to 'C'.
+Human learning:  80%|████████  | 8/10 [00:34<00:08,  4.18s/it]Warning: Could not set locale to 'C'.
+Human learning:  90%|█████████ | 9/10 [00:38<00:04,  4.31s/it]Warning: Could not set locale to 'C'.
+Human learning: 100%|██████████| 10/10 [00:43<00:00,  4.46s/it]Human learning: 100%|██████████| 10/10 [00:43<00:00,  4.35s/it]
+
+    ----------------------------------------------------
+                    Agents in traffic
+    ----------------------------------------------------
+    Total agents           | 222
+    Human agents           | 211
+    AV agents              | 11
+    ----------------------------------------------------
+    
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/torchrl/envs/common.py:1105: DeprecationWarning: You are querying a non-trivial, single action_spec, i.e., there is only one action known by the environment but it is not named `'action'`. Currently, env.action_spec returns the leaf but for consistency with the setter, this will return the full spec instead (from v0.8 and on).
+  warnings.warn(
+Warning: Could not set locale to 'C'.
+Training:   0%|          | 0/5 [00:00<?, ?it/s]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Training:  20%|██        | 1/5 [00:12<00:49, 12.27s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Training:  40%|████      | 2/5 [00:22<00:33, 11.01s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Training:  60%|██████    | 3/5 [00:31<00:20, 10.33s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Training:  80%|████████  | 4/5 [00:41<00:09,  9.99s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Training: 100%|██████████| 5/5 [00:51<00:00, 10.18s/it]Training: 100%|██████████| 5/5 [00:51<00:00, 10.38s/it]
+Testing:   0%|          | 0/10 [00:00<?, ?it/s]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  10%|█         | 1/10 [00:04<00:39,  4.34s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  20%|██        | 2/10 [00:09<00:37,  4.71s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  30%|███       | 3/10 [00:14<00:34,  4.95s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  40%|████      | 4/10 [00:19<00:29,  4.97s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  50%|█████     | 5/10 [00:24<00:25,  5.02s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  60%|██████    | 6/10 [00:30<00:21,  5.38s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  70%|███████   | 7/10 [00:35<00:15,  5.26s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  80%|████████  | 8/10 [00:40<00:10,  5.22s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing:  90%|█████████ | 9/10 [00:45<00:05,  5.15s/it]Warning: Could not set locale to 'C'.
+Warning: Could not set locale to 'C'.
+Testing: 100%|██████████| 10/10 [00:51<00:00,  5.22s/it]Testing: 100%|██████████| 10/10 [00:51<00:00,  5.13s/it]
+Running metrics analysis for experiment 'test_qmix_sa'...
+wandb: updating run metadata
+wandb: uploading wandb-summary.json; uploading config.yaml; uploading media/images/plots/rewards_5_af884651b4ddab23c1e3.png; uploading media/images/plots/travel_times_6_199458b77418c5e3261e.png; uploading output.log
+wandb: uploading config.yaml; uploading media/images/plots/rewards_5_af884651b4ddab23c1e3.png; uploading media/images/plots/travel_times_6_199458b77418c5e3261e.png; uploading output.log
+wandb: 
+wandb: Run history:
+wandb:         iteration ▁▃▅▆█
+wandb:     train/epsilon █▅▁▁▁
+wandb:        train/loss ▃█▄▂▁
+wandb: train/mean_reward ▇▂█▁▅
+wandb: 
+wandb: Run summary:
+wandb:         iteration 5
+wandb:     train/epsilon 0.05
+wandb:        train/loss 1517067933509.818
+wandb: train/mean_reward -0.37321
+wandb: 
+wandb: 🚀 View run test_qmix_sa at: https://wandb.ai/aintern26coexistence/URB-Traffic-Routing/runs/bgwmwzva
+wandb: ⭐️ View project at: https://wandb.ai/aintern26coexistence/URB-Traffic-Routing
+wandb: Synced 5 W&B file(s), 2 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260907_142313-bgwmwzva/logs

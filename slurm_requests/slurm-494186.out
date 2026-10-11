@@ -1,0 +1,3 @@
+GPU 0: NVIDIA GeForce RTX 2080 Ti (UUID: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50)
+/var/spool/slurmd/job494186/slurm_script: line 18: python: command not found
+/var/spool/slurmd/job494186/slurm_script: line 20: python: command not found

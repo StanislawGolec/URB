@@ -1,0 +1,69 @@
+GPU 0: NVIDIA GeForce RTX 2080 Ti (UUID: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50)
+==========================================================
+Starting Job: qmix_clusters_alt10_ing2_s42
+Task Config:  altruistic_10
+Array Task:   1 / 10 (Ratio: 10%)
+==========================================================
+--- Starting: python -u scripts/qmix_torchrl_clusters.py --id qmix_clusters_alt10_ing2_s42 --alg-conf config1 --env-conf clusters_eta --task-conf altruistic_10 --net ingolstadt_custom2 --env-seed 42 --torch-seed 42 ---
+### STARTING EXPERIMENT ###
+Algorithm: QMIX_TORCHRL
+Experiment ID: qmix_clusters_alt10_ing2_s42
+Network: ingolstadt_custom2
+Environment seed: 42
+PyTorch seed: 42
+Algorithm config: config1
+Environment config: clusters_eta
+Task config: altruistic_10
+Requested route set: network default
+Shuffle: False
+Device: cuda:0 (NVIDIA GeForce RTX 2080 Ti)
+Route set: default-pre-integration
+[ClusteredRoutesLoader] Loaded 306 OD pairs with 4 routes each
+[ClusteredRoutesLoader] Exported 1156 routes to ../results/qmix_clusters_alt10_ing2_s42/paths.csv
+[ClusteredRoutesLoader] Exported 1156 routes to ../results/qmix_clusters_alt10_ing2_s42/routes.csv
+[ClusteredRoutesLoader] Exported 1156 routes to ../results/qmix_clusters_alt10_ing2_s42/route.rou.xml
+[ClusteredRoutesLoader] Loaded action masks for 306 agents from ../networks/ingolstadt_custom2/clustered_routes/default-pre-integration/ingolstadt_custom2_action_masks.csv
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from WANDB_API_KEY.
+wandb: Currently logged in as: stanislawgolec to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 3jjzz6wb
+wandb: Tracking run with wandb version 0.29.0
+wandb: Run data is saved locally in /app/scripts/wandb/run-20260907_150856-3jjzz6wb
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run qmix_clusters_alt10_ing2_s42
+wandb: ⭐️ View project at https://wandb.ai/aintern26coexistence/URB-Traffic-Routing
+wandb: 🚀 View run at https://wandb.ai/aintern26coexistence/URB-Traffic-Routing/runs/3jjzz6wb
+[W&B] Initialized run 'qmix_clusters_alt10_ing2_s42' in project 'URB-Traffic-Routing' (mode: online).
+[CONFIRMED] Environment variable exists: SUMO_HOME
+[SUCCESS] Added module directory: /usr/share/sumo/tools
+
+    ----------------------------------------------------
+                    Agents in traffic
+    ----------------------------------------------------
+    Total agents           | 1035
+    Human agents           | 1035
+    AV agents              | 0
+    ----------------------------------------------------
+    
+ Retrying in 1 seconds
+Warning: Could not set locale to 'C'.
+Human learning:   0%|          | 0/300 [00:00<?, ?it/s]Warning: Could not set locale to 'C'.
+Traceback (most recent call last):
+  File "/app/scripts/qmix_torchrl_clusters.py", line 319, in <module>
+    env.step()
+    ~~~~~~~~^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/routerl/environment/environment.py", line 575, in step
+    self.simulation_loop(machine_action=0, machine_id=0)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/routerl/environment/environment.py", line 847, in simulation_loop
+    action = human.act(0)
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/routerl/environment/agent.py", line 205, in act
+    action = self.model.act(observation)
+  File "/home/z1220859/miniconda3/envs/URB/lib/python3.13/site-packages/routerl/human_learning/learning_model.py", line 85, in act
+    action = np.random.choice(list(range(len(self.cost))), p=prob_dist)
+  File "numpy/random/mtrand.pyx", line 995, in numpy.random.mtrand.RandomState.choice
+ValueError: probabilities contain NaN
+[1;34mwandb[0m: 
+[1;34mwandb[0m: 🚀 View run [33mqmix_clusters_alt10_ing2_s42[0m at: [34mhttps://wandb.ai/aintern26coexistence/URB-Traffic-Routing/runs/3jjzz6wb[0m
+[1;34mwandb[0m: Find logs at: [1;35mwandb/run-20260907_150856-3jjzz6wb/logs[0m
+Error: tcpip::Socket::recvAndCheck @ recv: peer shutdown
+Quitting (on error).

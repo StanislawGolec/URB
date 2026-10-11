@@ -1,0 +1,209 @@
+_wandb:
+    value:
+        cli_version: 0.29.0
+        e:
+            qafbro9jbajjlls8ee2gvl9glnvh5mjc:
+                args:
+                    - --id
+                    - qmix_clusters_alt10_ing2_s42
+                    - --alg-conf
+                    - config1
+                    - --env-conf
+                    - clusters_eta
+                    - --task-conf
+                    - altruistic_10
+                    - --net
+                    - ingolstadt_custom2
+                    - --env-seed
+                    - "42"
+                    - --torch-seed
+                    - "42"
+                codePath: scripts/qmix_torchrl_clusters.py
+                codePathLocal: qmix_torchrl_clusters.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.3"
+                disk:
+                    /:
+                        total: "16777216"
+                        used: "12288"
+                email: stasscpl@gmail.com
+                executable: /home/z1220859/miniconda3/envs/URB/bin/python
+                git:
+                    commit: be13d4be9ec71c39ac706cef5d55ec4004921e0a
+                    remote: https://github.com/StanislawGolec/URB.git
+                gpu: NVIDIA GeForce RTX 2080 Ti
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 4352
+                      memoryTotal: "11811160064"
+                      name: NVIDIA GeForce RTX 2080 Ti
+                      uuid: GPU-467453a8-1a0a-7658-ce33-52ef44f38b50
+                host: szarancza
+                memory:
+                    total: "540668338176"
+                os: Linux-7.0.0-28-generic-x86_64-with-glibc2.35
+                program: /app/scripts/qmix_torchrl_clusters.py
+                python: CPython 3.13.15
+                root: /app/scripts
+                slurm:
+                    array_job_id: "494312"
+                    array_task_count: "1"
+                    array_task_id: "1"
+                    array_task_max: "1"
+                    array_task_min: "1"
+                    array_task_step: "1"
+                    cluster_name: cluster
+                    conf: /etc/slurm.conf
+                    cpus_on_node: "4"
+                    cpus_per_task: "4"
+                    gpus_on_node: "1"
+                    gtids: "0"
+                    job_account: stud
+                    job_cpus_per_node: "4"
+                    job_gid: "1000"
+                    job_gpus: "1"
+                    job_id: "494312"
+                    job_name: qmix_alt_sweep
+                    job_nodelist: szarancza
+                    job_num_nodes: "1"
+                    job_partition: student
+                    job_qos: quick
+                    job_uid: "22220"
+                    job_user: z1220859
+                    jobid: "494312"
+                    localid: "0"
+                    mem_per_node: "32768"
+                    nnodes: "1"
+                    node_aliases: (null)
+                    nodeid: "0"
+                    nodelist: szarancza
+                    prio_process: "0"
+                    procid: "0"
+                    submit_dir: /home/z1220859/URB/slurm_requests
+                    submit_host: gmum-gw
+                    task_pid: "128108"
+                    tasks_per_node: "1"
+                    topology_addr: szarancza
+                    topology_addr_pattern: node
+                    working_cluster: cluster:gmum-gw:6817:9728:109
+                startedAt: "2026-09-07T13:08:56.713657Z"
+                writerId: qafbro9jbajjlls8ee2gvl9glnvh5mjc
+        m: []
+        python_version: 3.13.15
+        t:
+            "1":
+                - 1
+                - 105
+            "2":
+                - 1
+                - 105
+            "3":
+                - 13
+                - 15
+                - 16
+            "4": 3.13.15
+            "5": 0.29.0
+            "12": 0.29.0
+            "13": linux-x86_64
+agent_frames_per_batch:
+    value: 20
+alg_config:
+    value: config1
+algorithm:
+    value: qmix_torchrl
+av_behavior:
+    value: altruistic
+env_config:
+    value: clusters_eta
+env_seed:
+    value: 42
+eps_greedy_end:
+    value: 0.1
+eps_greedy_init:
+    value: 1
+exp_type:
+    value: normal
+exploration_fraction:
+    value: 0.6
+gamma:
+    value: 0.95
+human_alpha:
+    value: 0.2
+human_beta:
+    value: -1.5
+human_beta_randomness:
+    value: 0.1
+human_deterministic:
+    value: false
+human_learning_episodes:
+    value: 300
+human_model:
+    value: gawron
+lr:
+    value: 0.0004
+max_grad_norm:
+    value: 1
+memory_size:
+    value: 30000
+minibatch_size:
+    value: 256
+mixing_embed_dim:
+    value: 192
+mlp_cells:
+    value: 256
+mlp_depth:
+    value: 4
+n_iters:
+    value: 200
+network:
+    value: ingolstadt_custom2
+num_agents:
+    value: 1035
+num_epochs:
+    value: 2
+num_machines:
+    value: 103
+num_samples:
+    value: 10
+number_of_paths:
+    value: 4
+observations:
+    value: trip_info_eta
+od_embedding_dim:
+    value: 8
+path_gen_beta:
+    value: -5
+plot_choices:
+    value: basic
+plot_every:
+    value: 50
+ratio_machines:
+    value: 0.1
+route_set:
+    value: default-pre-integration
+save_every:
+    value: 5
+script:
+    value: scripts/qmix_torchrl_clusters.py
+share_params_agent:
+    value: true
+should_humans_adapt:
+    value: false
+shuffle:
+    value: false
+smooth_by:
+    value: 10
+task_config:
+    value: altruistic_10
+tau:
+    value: 0.01
+test_eps:
+    value: 100
+torch_seed:
+    value: 42
+use_action_masks:
+    value: true
+use_clustered_routes:
+    value: true
