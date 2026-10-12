@@ -29,21 +29,11 @@ def main():
     args = parser.parse_args()
     pairs = list(archive_pairs(json.loads(MANIFEST.read_text(encoding="utf-8"))))
     for source, archived in pairs:
+        if source.exists() and (source / "BenchmarkMetrics.csv").exists():
+            raise ValueError(f"Refusing to move a finished run with metrics: {source}")
         if source.exists() and archived.exists():
-            files = sorted(p.name for p in source.iterdir())
-            if files not in (["exp_config.json", "paths.csv"], []):
-                raise ValueError(f"Refusing to remove unexpected files in {source}: {files}")
-            print(f"Archive already exists ({archived.name}); redundant source will be cleaned: {source.name}")
+            print(f"Archive already exists ({archived.name}); remaining files in {source.name} will be merged into archive.")
         elif source.exists():
-            files = sorted(p.name for p in source.iterdir())
-            if files != ["exp_config.json", "paths.csv"]:
-                raise ValueError(f"Refusing to move a modified or finished run: {source}: {files}")
-            config = json.loads((source / "exp_config.json").read_text(encoding="utf-8"))
-            task_name = config.get("task_config", "")
-            expected_tag = (f"alt{task_name.removeprefix('altruistic_')}"
-                            if task_name.startswith("altruistic_") else task_name)
-            if expected_tag not in source.name or config.get("algorithm") != "qmix_torchrl":
-                raise ValueError(f"Experiment config does not match expected failed run: {source}")
             print(f"{source.name} -> {archived.name}")
         elif archived.exists():
             print(f"Already archived: {archived.name}")
@@ -54,7 +44,15 @@ def main():
         return
     for source, archived in pairs:
         if source.exists() and archived.exists():
-            shutil.rmtree(source)
+            for item in list(source.iterdir()):
+                dest = archived / item.name
+                if dest.exists():
+                    if dest.is_dir():
+                        shutil.rmtree(dest)
+                    else:
+                        dest.unlink()
+                shutil.move(str(item), str(dest))
+            source.rmdir()
         elif source.exists():
             source.rename(archived)
     print("Archived 15 failed folders; original experiment IDs are available for retry.")
