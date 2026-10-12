@@ -6,6 +6,7 @@ The original W&B journals and Slurm logs remain in their existing locations.
 import argparse
 import json
 from pathlib import Path
+import shutil
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "analysis/reports/10_plus_16/manifest.json"
@@ -29,8 +30,11 @@ def main():
     pairs = list(archive_pairs(json.loads(MANIFEST.read_text(encoding="utf-8"))))
     for source, archived in pairs:
         if source.exists() and archived.exists():
-            raise FileExistsError(f"Both source and archive exist: {source}")
-        if source.exists():
+            files = sorted(p.name for p in source.iterdir())
+            if files not in (["exp_config.json", "paths.csv"], []):
+                raise ValueError(f"Refusing to remove unexpected files in {source}: {files}")
+            print(f"Archive already exists ({archived.name}); redundant source will be cleaned: {source.name}")
+        elif source.exists():
             files = sorted(p.name for p in source.iterdir())
             if files != ["exp_config.json", "paths.csv"]:
                 raise ValueError(f"Refusing to move a modified or finished run: {source}: {files}")
@@ -49,7 +53,9 @@ def main():
         print("Preview only; add --execute to archive the failed folders.")
         return
     for source, archived in pairs:
-        if source.exists():
+        if source.exists() and archived.exists():
+            shutil.rmtree(source)
+        elif source.exists():
             source.rename(archived)
     print("Archived 15 failed folders; original experiment IDs are available for retry.")
 
