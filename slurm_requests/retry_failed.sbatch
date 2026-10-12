@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
 #SBATCH --array=1-15
-#SBATCH --output=container_printouts/retry-%A_%a.out
+#SBATCH --output=slurm_requests/container_printouts/retry-%A_%a.out
 
 set -euo pipefail
 [[ "${SLURM_ARRAY_TASK_ID:-}" =~ ^([1-9]|1[0-5])$ ]] || { echo "Expected task 1-15" >&2; exit 2; }
