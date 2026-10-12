@@ -1,17 +1,19 @@
 #!/bin/bash
 #SBATCH --job-name=urb_test_sa
-#SBATCH --partition=student
-#SBATCH --qos=quick
+#SBATCH --partition=rknodes
+#SBATCH --qos=big
 #SBATCH --mem=16G
 #SBATCH --cpus-per-task=4
 #SBATCH --gres=gpu:1
 #SBATCH --output=container_printouts/slurm-%j.out
 
-nvidia-smi -L
+set -euo pipefail
+
+nvidia-smi --query-gpu=name,memory.total --format=csv
 
 PATH_PROGRAM="${PATH_PROGRAM:-/home/$USER/URB}"
 PUT_PROGRAM_TO="/app"
-PATH_SUMO_CONTAINER="/shared/sets/singularity/sumo1_26_0patched.sif"
+PATH_SUMO_CONTAINER="${PATH_SUMO_CONTAINER:-/shared/sets/singularity/sumo1_26_0patched.sif}"
 CMD_PATH="$PATH_PROGRAM/slurm_requests/cmd_container.sh"
 PRINTS_SAVE_PATH="$PATH_PROGRAM/slurm_requests/container_printouts/output_${SLURM_JOB_ID}.txt"
 

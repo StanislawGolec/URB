@@ -1,0 +1,3 @@
+# Slurm and Bash reject CRLF scripts copied from a Windows checkout.
+*.sh text eol=lf
+*.sbatch text eol=lf

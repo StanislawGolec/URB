@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=qmix_alt_sweep
-#SBATCH --partition=student
+#SBATCH --partition=rknodes
 #SBATCH --qos=big
 #SBATCH --time=7-00:00:00
 #SBATCH --mem=32G
@@ -9,19 +9,22 @@
 #SBATCH --array=1-10
 #SBATCH --output=container_printouts/slurm-%A_%a.out
 
-nvidia-smi -L
+set -euo pipefail
+
+nvidia-smi --query-gpu=name,memory.total --format=csv
 
 # Array of altruistic percentages: 10% to 100%
 RATIOS=(10 20 30 40 50 60 70 80 90 100)
+[[ "${SLURM_ARRAY_TASK_ID:-}" =~ ^([1-9]|10)$ ]] || { echo "Expected array task 1-10" >&2; exit 2; }
 INDEX=$((SLURM_ARRAY_TASK_ID - 1))
 ALT_RATIO="${RATIOS[$INDEX]}"
 
 TASK_CONF="altruistic_${ALT_RATIO}"
-EXP_ID="qmix_clusters_alt${ALT_RATIO}_ing2_s42"
+EXP_ID="qmix_clusters_alt${ALT_RATIO}_ing2_s42${EXP_SUFFIX:-_bonk}"
 
 PATH_PROGRAM="${PATH_PROGRAM:-/home/$USER/URB}"
 PUT_PROGRAM_TO="/app"
-PATH_SUMO_CONTAINER="/shared/sets/singularity/sumo1_26_0patched.sif"
+PATH_SUMO_CONTAINER="${PATH_SUMO_CONTAINER:-/shared/sets/singularity/sumo1_26_0patched.sif}"
 CMD_PATH="$PATH_PROGRAM/slurm_requests/cmd_container.sh"
 PRINTS_SAVE_PATH="$PATH_PROGRAM/slurm_requests/container_printouts/output_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.txt"
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=urb_mixed_sweep
-#SBATCH --partition=student
+#SBATCH --partition=rknodes
 #SBATCH --qos=big
 #SBATCH --time=7-00:00:00
 #SBATCH --mem=32G
@@ -9,7 +9,9 @@
 #SBATCH --array=1-16
 #SBATCH --output=container_printouts/slurm-%A_%a.out
 
-nvidia-smi -L
+set -euo pipefail
+
+nvidia-smi --query-gpu=name,memory.total --format=csv
 
 # 8 mixed reward configurations (Issue #44)
 CONFIGS=(
@@ -25,6 +27,7 @@ CONFIGS=(
 
 # Tasks 1-8: QMIX Clusters
 # Tasks 9-16: IQL Clusters
+[[ "${SLURM_ARRAY_TASK_ID:-}" =~ ^([1-9]|1[0-6])$ ]] || { echo "Expected array task 1-16" >&2; exit 2; }
 if [ "$SLURM_ARRAY_TASK_ID" -le 8 ]; then
     ALGO="qmix_clusters"
     SCRIPT="scripts/qmix_torchrl_clusters.py"
@@ -32,7 +35,7 @@ if [ "$SLURM_ARRAY_TASK_ID" -le 8 ]; then
     ENV_CONF="clusters_eta"
     RATIO_IDX=$((SLURM_ARRAY_TASK_ID - 1))
     TASK_CONF="${CONFIGS[$RATIO_IDX]}"
-    EXP_ID="qmix_clusters_${TASK_CONF}_ing2_s42"
+    EXP_ID="qmix_clusters_${TASK_CONF}_ing2_s42${EXP_SUFFIX:-_bonk}"
 else
     ALGO="iql_clusters"
     SCRIPT="scripts/iql_clusters.py"
@@ -40,12 +43,12 @@ else
     ENV_CONF="clusters_eta"
     RATIO_IDX=$((SLURM_ARRAY_TASK_ID - 9))
     TASK_CONF="${CONFIGS[$RATIO_IDX]}"
-    EXP_ID="iql_clusters_${TASK_CONF}_ing2_s42"
+    EXP_ID="iql_clusters_${TASK_CONF}_ing2_s42${EXP_SUFFIX:-_bonk}"
 fi
 
 PATH_PROGRAM="${PATH_PROGRAM:-/home/$USER/URB}"
 PUT_PROGRAM_TO="/app"
-PATH_SUMO_CONTAINER="/shared/sets/singularity/sumo1_26_0patched.sif"
+PATH_SUMO_CONTAINER="${PATH_SUMO_CONTAINER:-/shared/sets/singularity/sumo1_26_0patched.sif}"
 CMD_PATH="$PATH_PROGRAM/slurm_requests/cmd_container.sh"
 PRINTS_SAVE_PATH="$PATH_PROGRAM/slurm_requests/container_printouts/output_${SLURM_ARRAY_JOB_ID}_${SLURM_ARRAY_TASK_ID}.txt"
 

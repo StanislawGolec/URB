@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-12",
+  "status": "blocked_before_upload",
+  "destination": "aintern26coexistence/URB-Traffic-Routing",
+  "selected_original_runs": 26,
+  "completed_experiments": 11,
+  "failed_experiments": 15,
+  "verified_remote_uploads_in_this_session": 0,
+  "credentials_present_locally": true,
+  "preflight": "Authenticated viewer query to https://api.wandb.ai/graphql could not open a network socket.",
+  "error": "WinError 10013: network socket access forbidden by session permissions",
+  "local_validation": "All 26 journals and 55 plot hashes verified; all 231 saved benchmark values match the original W&B summaries.",
+  "next_command_from_repository_root": "python analysis/sync_new_sweeps.py --execute",
+  "note": "Run on a machine with W&B network access and a configured login. A syncstate file is not proof of a completed upload. The command preserves original IDs and verifies remote outcomes."
+}

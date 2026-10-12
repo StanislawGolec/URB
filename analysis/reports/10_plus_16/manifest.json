@@ -1,0 +1,1050 @@
+{
+  "schema_version": 1,
+  "runs": [
+    {
+      "experiment": "qmix_clusters_alt10_ing2_s42",
+      "run_id": "jai0o88p",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260907_163335-jai0o88p/run-jai0o88p.wandb",
+      "sha256": "03d6eb9c8c67b1f5bcd094cfb3b58b3f11547baab6b12c80150a1ae7abbc96ce",
+      "exit_code": 0,
+      "git_commit": "babe8cb4d33f2f93a11aa9828c546fa71a8a5c7b",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-jai0o88p/files/media/images/plots/rewards_200_5094a5e7468a18f917d5.png",
+          "sha256": "5094a5e7468a18f917d583d0c547773e826878fca76aea2cf39cdaa0cd4b8d83"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-jai0o88p/files/media/images/plots/travel_times_200_2ee7f7abd6e73b771a78.png",
+          "sha256": "2ee7f7abd6e73b771a78c2761b5a8a1e2a84204efa7398ffa073da862337464a"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-jai0o88p/files/media/images/plots/metrics/action change count_200_9094407dfb0d1d141156.png",
+          "sha256": "9094407dfb0d1d141156849c34bbc4cb75afa412f963c528cb46a4f2e089d211"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-jai0o88p/files/media/images/plots/metrics/avg time lost_200_7095163acc9499dc684b.png",
+          "sha256": "7095163acc9499dc684b56a1c6c625fd97d21fc2a951873f1dcb2224f4b7bbe4"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-jai0o88p/files/media/images/plots/metrics/time excess_200_6a9fe79bce3411634421.png",
+          "sha256": "6a9fe79bce3411634421581a34ccfbb67b4ed7ba6d03ec331e812323bc6d365f"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.986898067632849,
+        "t_train": 4.966260797101449,
+        "t_CAV": 6.40621359223301,
+        "t_HDV_pre": 4.840370171673818,
+        "t_HDV_test": 4.830042381974248,
+        "CAV_advantage": 0.7539621201251023,
+        "Effect_of_change": 0.7555742720695975,
+        "Effect_of_remaining": 1.00213823997448,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.820599999999995,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.3889584999999998,
+        "winrate": 0.0,
+        "cost_of_learning": 3.41783574879227,
+        "cost_of_learning_humans": 3.3318884120171672,
+        "cost_of_learning_CAVs": 4.195533980582524,
+        "avg_time_lost": 97.9578260869565,
+        "avg_human_time_lost": -0.0030728436093374026,
+        "avg_CAV_time_lost": 1.2282114610466495,
+        "diff_sumo_routerl": -0.05541473429951527
+      },
+      "training_progress": 200
+    },
+    {
+      "experiment": "qmix_clusters_alt20_ing2_s42",
+      "run_id": "gwnsmb1b",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260907_163335-gwnsmb1b/run-gwnsmb1b.wandb",
+      "sha256": "4e0032dbae023593d7de99a496143011174097ee7e70ebf042287ee2b98b279e",
+      "exit_code": 0,
+      "git_commit": "babe8cb4d33f2f93a11aa9828c546fa71a8a5c7b",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-gwnsmb1b/files/media/images/plots/rewards_200_5def847ebca5829266b9.png",
+          "sha256": "5def847ebca5829266b9ecb916e213c04f0be9b61794dec80c22f8ef6840c737"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-gwnsmb1b/files/media/images/plots/travel_times_200_9023fcfbde1779f57633.png",
+          "sha256": "9023fcfbde1779f5763318a6c169ccc136092865cc9a51fc50961573e86ae5f2"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-gwnsmb1b/files/media/images/plots/metrics/action change count_200_c1cf676aca57156e0b3b.png",
+          "sha256": "c1cf676aca57156e0b3bde54e72a4a2b5c4488c5412c8da44f30b05a20c7f1fe"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-gwnsmb1b/files/media/images/plots/metrics/avg time lost_200_774a9aa8982a63f1e189.png",
+          "sha256": "774a9aa8982a63f1e18907422cf2f9db285fe31e347c9ec293e8b2690b0ee774"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260907_163335-gwnsmb1b/files/media/images/plots/metrics/time excess_200_22d36d2b453b64dc4480.png",
+          "sha256": "22d36d2b453b64dc4480557b48f98fc821b498a7123a75bb8499af1941ed2a14"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.8473033816425115,
+        "t_test": 5.191101449275363,
+        "t_train": 5.1233362922705314,
+        "t_CAV": 6.381990338164252,
+        "t_HDV_pre": 4.874099033816424,
+        "t_HDV_test": 4.893379227053141,
+        "CAV_advantage": 0.766748140903751,
+        "Effect_of_change": 0.7637271094989521,
+        "Effect_of_remaining": 0.9960599429674024,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.428199999999993,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.4532184999999997,
+        "winrate": 0.0,
+        "cost_of_learning": 4.965062801932367,
+        "cost_of_learning_humans": 4.71780193236715,
+        "cost_of_learning_CAVs": 5.954106280193237,
+        "avg_time_lost": 227.70228985507245,
+        "avg_human_time_lost": 0.014829415576764439,
+        "avg_CAV_time_lost": 1.3291109343702132,
+        "diff_sumo_routerl": -0.05522644927536291
+      },
+      "training_progress": 200
+    },
+    {
+      "experiment": "qmix_clusters_alt30_ing2_s42",
+      "run_id": "kp0qal4h",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260909_110427-kp0qal4h/run-kp0qal4h.wandb",
+      "sha256": "dbd6f8799bf1ab515d305758ab95e7459dc174717fcd8d459b56d2c4e4171e76",
+      "exit_code": 0,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260909_110427-kp0qal4h/files/media/images/plots/rewards_200_7634a1e0b4e2401ec520.png",
+          "sha256": "7634a1e0b4e2401ec520b80c44e41a593af7ebd578e286d234108b9bcee33923"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260909_110427-kp0qal4h/files/media/images/plots/travel_times_200_2134669c5931685ee9d5.png",
+          "sha256": "2134669c5931685ee9d56859dead651e267c802f5dea4df85614660627a9a95d"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260909_110427-kp0qal4h/files/media/images/plots/metrics/action change count_200_0e1fa61473ea04797bc8.png",
+          "sha256": "0e1fa61473ea04797bc8149027615813e828bdcba53acc8e3b44f319d9954599"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260909_110427-kp0qal4h/files/media/images/plots/metrics/avg time lost_200_18c0392ed257ed12eb3f.png",
+          "sha256": "18c0392ed257ed12eb3f38973f2101279f7a372fb81541ea7fc6df5fe5c757ca"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260909_110427-kp0qal4h/files/media/images/plots/metrics/time excess_200_d85676589d3a507290b1.png",
+          "sha256": "d85676589d3a507290b1e62f62def2d94458bca14c1f32815f41086d41fcee73"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.8473033816425115,
+        "t_test": 5.345270531400966,
+        "t_train": 5.26838270531401,
+        "t_CAV": 6.411872580645162,
+        "t_HDV_pre": 4.878168275862067,
+        "t_HDV_test": 4.88920620689655,
+        "CAV_advantage": 0.7625239187776559,
+        "Effect_of_change": 0.7608024355610676,
+        "Effect_of_remaining": 0.9977423879117814,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.294999999999998,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.516629,
+        "winrate": 0.0,
+        "cost_of_learning": 5.364135265700484,
+        "cost_of_learning_humans": 5.15856551724138,
+        "cost_of_learning_CAVs": 5.844903225806452,
+        "avg_time_lost": 346.8228019323671,
+        "avg_human_time_lost": 0.029845702270815788,
+        "avg_CAV_time_lost": 1.3423223052714397,
+        "diff_sumo_routerl": -0.05449553140096697
+      },
+      "training_progress": 200
+    },
+    {
+      "experiment": "qmix_clusters_alt40_ing2_s42",
+      "run_id": "ljdg17jx",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_034958-ljdg17jx/run-ljdg17jx.wandb",
+      "sha256": "b8188d66d5b933b20268fb62d22060701b3e90d0e7e086eec6e7a4dd8260d9a6",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_alt50_ing2_s42",
+      "run_id": "08vcbu42",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_071235-08vcbu42/run-08vcbu42.wandb",
+      "sha256": "da6b1385832b0041469b252df17ddd9c5203d5274dfe37c4efc2b805568fc943",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_alt60_ing2_s42",
+      "run_id": "12wlvese",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_105859-12wlvese/run-12wlvese.wandb",
+      "sha256": "a48dfc08fcd13c60a2de9b6a76938e82879a8bd71a9fbc0499e6a324e3133b5f",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_alt70_ing2_s42",
+      "run_id": "ughify0p",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_144427-ughify0p/run-ughify0p.wandb",
+      "sha256": "36f0597bae06ce9c177cd3d05c4e49a34458c4b9895fa029fca2f144a9d36b7f",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_alt80_ing2_s42",
+      "run_id": "xbe2kipp",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_170244-xbe2kipp/run-xbe2kipp.wandb",
+      "sha256": "aaf0e2f6f1e6c6e1b6b9db23886fbab55328086737ada351f721f8b74fc19e03",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_alt90_ing2_s42",
+      "run_id": "y97ahouk",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_191319-y97ahouk/run-y97ahouk.wandb",
+      "sha256": "4fc4bff267667742982be30a3708064c894af4740821435a1358b9e0b602c74c",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_alt100_ing2_s42",
+      "run_id": "08pt4fat",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260910_212642-08pt4fat/run-08pt4fat.wandb",
+      "sha256": "aec10c1d7b7d1e0d428374f9bcaf8974b823c1dd41533b7bf997223168201c98",
+      "exit_code": 1,
+      "git_commit": "fece3e28b19bcc8b2bba57f04455849c5ea218fe",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind100_all0_ing2_s42",
+      "run_id": "ss3hmc9j",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260916_210543-ss3hmc9j/run-ss3hmc9j.wandb",
+      "sha256": "be78b7b8564a4a3e5c143f140d5f340614d2e072ba2f23621c13558c25b0a081",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind85_all15_ing2_s42",
+      "run_id": "gxctctnt",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260916_210543-gxctctnt/run-gxctctnt.wandb",
+      "sha256": "4e1cb6ce8fcc52f6d9c7d57dac2bab11056353bd8b24b6d9190f915c588d71bf",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind70_all30_ing2_s42",
+      "run_id": "w7e30j32",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260916_235634-w7e30j32/run-w7e30j32.wandb",
+      "sha256": "663d711b3c31b5a0aca50e172303b300552ed71e83dee22b66ea86e2562ae92a",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind50_all50_ing2_s42",
+      "run_id": "qcodctr7",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260917_002532-qcodctr7/run-qcodctr7.wandb",
+      "sha256": "1f3320f8860e27b037212bfc5c9f285130accdc4ea5d62ac2c57cf2d80dd8100",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind30_all70_ing2_s42",
+      "run_id": "jkgf9j08",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260917_024605-jkgf9j08/run-jkgf9j08.wandb",
+      "sha256": "5d0e1864000640321039bbc022000da5984b8f3baeeedca700170ae6e42d6f6c",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind15_all85_ing2_s42",
+      "run_id": "h5mu8mh1",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260917_025918-h5mu8mh1/run-h5mu8mh1.wandb",
+      "sha256": "c533d7286fdb3c1c360101af5f5258c6818fe41f1babfe78c36f880dedf58ce4",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind05_all95_ing2_s42",
+      "run_id": "2if3pnt3",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260917_053955-2if3pnt3/run-2if3pnt3.wandb",
+      "sha256": "dbcb8067555bc302f91e41fc11fe78a0da4917d4b2fb2f9adf201bbe373626b4",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "qmix_clusters_mixed_reward_ind0_all100_ing2_s42",
+      "run_id": "062iq2fo",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "failed_cuda_oom",
+      "file": "scripts/wandb/offline-run-20260917_061938-062iq2fo/run-062iq2fo.wandb",
+      "sha256": "96e054d8be3231d2bc1ef8094ee1e207adb4bdb5fda771e0659444b7eda532c9",
+      "exit_code": 1,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [],
+      "benchmark": {},
+      "training_progress": 0
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind100_all0_ing2_s42",
+      "run_id": "rhii61ug",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260917_083020-rhii61ug/run-rhii61ug.wandb",
+      "sha256": "cbb8d42e51f812a769131d508227700b6bec1b6295bd7c8bb58dff0e32b07050",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260917_083020-rhii61ug/files/media/images/plots/metrics/avg time lost_4000_b5adcbe0a77a1197cef5.png",
+          "sha256": "b5adcbe0a77a1197cef57a5b5db9824d5be6f14eabbd83c422f0db6c14dbe0c4"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_083020-rhii61ug/files/media/images/plots/metrics/time excess_4000_066380b02e9279e1e699.png",
+          "sha256": "066380b02e9279e1e699e2457eaeb1ae92e4872c6316094e8a40de5eba80cf7f"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_083020-rhii61ug/files/media/images/plots/rewards_4000_60fd7a816b24e047f718.png",
+          "sha256": "60fd7a816b24e047f718f60cef35d0a612b7bb0c56358262809c684ba56bd73f"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_083020-rhii61ug/files/media/images/plots/travel_times_4000_0834d25debf8d1db299d.png",
+          "sha256": "0834d25debf8d1db299d5cec3b8fb854c4676f48ced4a8b59097b15af425d554"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_083020-rhii61ug/files/media/images/plots/metrics/action change count_4000_49422bf299dd088d6896.png",
+          "sha256": "49422bf299dd088d68965c66ddf55ec4273fbe8ffc33df5b0b0675299e93c356"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.796552173913044,
+        "t_train": 4.845758526570047,
+        "t_CAV": 4.696978260869564,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.862934782608697,
+        "CAV_advantage": 1.0353326144005635,
+        "Effect_of_change": 1.034092738213334,
+        "Effect_of_remaining": 0.9988024368497778,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 30.081600000000012,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.315138,
+        "winrate": 1.0,
+        "cost_of_learning": 4.278347826086956,
+        "cost_of_learning_humans": 4.062657004830918,
+        "cost_of_learning_CAVs": 4.601884057971015,
+        "avg_time_lost": -2.2509082125603994,
+        "avg_human_time_lost": 0.009775107026432563,
+        "avg_CAV_time_lost": -0.021525185577942734,
+        "diff_sumo_routerl": -0.056893840579710364
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind85_all15_ing2_s42",
+      "run_id": "z26a8ybw",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260917_093902-z26a8ybw/run-z26a8ybw.wandb",
+      "sha256": "9278b5b244db5f7de5a7d6bb31e775871a443f7af4c90e18cfb19f5b926b4df1",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260917_093902-z26a8ybw/files/media/images/plots/travel_times_4000_49085e4f62ae141da745.png",
+          "sha256": "49085e4f62ae141da74583485758d7dae3ce1441b1c2dad81b3977494f4fef85"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_093902-z26a8ybw/files/media/images/plots/metrics/action change count_4000_c6fd500e27badb27013f.png",
+          "sha256": "c6fd500e27badb27013f59877b6d6f1b19008ffae59b5538e0002717296d55be"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_093902-z26a8ybw/files/media/images/plots/metrics/avg time lost_4000_16bb889ffe34c7656c93.png",
+          "sha256": "16bb889ffe34c7656c9325c1cbcc527c1a4b295dfde7b5d2d9255450ad46df47"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_093902-z26a8ybw/files/media/images/plots/metrics/time excess_4000_0b9e239e16a3781a5d68.png",
+          "sha256": "0b9e239e16a3781a5d681683eee4c7b4a1661b025d9a855e1a4d5d8aecb8e55d"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260917_093902-z26a8ybw/files/media/images/plots/rewards_4000_bd0a1bef2cc80ef26f10.png",
+          "sha256": "bd0a1bef2cc80ef26f10e51b5c856fc9402498d032cdd3e56556a59e59f2f642"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.821524637681157,
+        "t_train": 4.848770144927535,
+        "t_CAV": 4.73005193236715,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.882506441223833,
+        "CAV_advantage": 1.0322310433450965,
+        "Effect_of_change": 1.0268621107253624,
+        "Effect_of_remaining": 0.9947987103717254,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.9826,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.317799,
+        "winrate": 1.0,
+        "cost_of_learning": 3.6034685990338167,
+        "cost_of_learning_humans": 3.2936876006441222,
+        "cost_of_learning_CAVs": 4.068140096618357,
+        "avg_time_lost": 0.6578357487922579,
+        "avg_human_time_lost": 0.01011217155649815,
+        "avg_CAV_time_lost": -0.013162660539648872,
+        "diff_sumo_routerl": -0.05650797101448912
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind70_all30_ing2_s42",
+      "run_id": "wrdglw1y",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260919_004253-wrdglw1y/run-wrdglw1y.wandb",
+      "sha256": "458c7808c1ccfed0004a99ff9ba403359ab44f003bb72abcbaca2c8e6e37dc0a",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260919_004253-wrdglw1y/files/media/images/plots/rewards_4000_83929d625fd9af97f1d8.png",
+          "sha256": "83929d625fd9af97f1d8e0a619ced1d0bf79d17d43739691700c46d81b938c50"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_004253-wrdglw1y/files/media/images/plots/travel_times_4000_e5a6262758bc775331f9.png",
+          "sha256": "e5a6262758bc775331f941f7bbf65b994726f876c05918566f283df149eb97e1"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_004253-wrdglw1y/files/media/images/plots/metrics/action change count_4000_572d201ba7086d2487a7.png",
+          "sha256": "572d201ba7086d2487a79e1cc6a9d78ba13a00e94ccf0a4dfb7e3ae79ce6dc8b"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_004253-wrdglw1y/files/media/images/plots/metrics/avg time lost_4000_c3e3c256661af943ddab.png",
+          "sha256": "c3e3c256661af943ddab1af3380f71a028e2641fedf73436dccbebd02018fd14"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_004253-wrdglw1y/files/media/images/plots/metrics/time excess_4000_c8cb398b7b83d4a0b53e.png",
+          "sha256": "c8cb398b7b83d4a0b53e5f32c043001e372cc913f2a006a662ce7ee3fb1fae5b"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.805528985507244,
+        "t_train": 4.852626014492753,
+        "t_CAV": 4.714789855072463,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.866021739130436,
+        "CAV_advantage": 1.032076060377382,
+        "Effect_of_change": 1.0301861292684191,
+        "Effect_of_remaining": 0.9981688063685229,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 30.077999999999996,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.3197995000000002,
+        "winrate": 1.0,
+        "cost_of_learning": 4.397652173913043,
+        "cost_of_learning_humans": 4.186296296296296,
+        "cost_of_learning_CAVs": 4.714685990338164,
+        "avg_time_lost": 3.422618357487907,
+        "avg_human_time_lost": 0.010109422253642801,
+        "avg_CAV_time_lost": -0.004729321314952286,
+        "diff_sumo_routerl": -0.05757065217391144
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind50_all50_ing2_s42",
+      "run_id": "xj8i5fkb",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260919_045607-xj8i5fkb/run-xj8i5fkb.wandb",
+      "sha256": "089f63e60aa703b8aed7f61a138996fcf2a63d5ffc3bc22ddd4a4804f4801d89",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260919_045607-xj8i5fkb/files/media/images/plots/rewards_4000_0e77c59de6ba8ae66a92.png",
+          "sha256": "0e77c59de6ba8ae66a92639e1a5325a2befed8efd1347ff1ea03fd890944a99f"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_045607-xj8i5fkb/files/media/images/plots/travel_times_4000_8c7e5fb79e670a8e94db.png",
+          "sha256": "8c7e5fb79e670a8e94db866c7ad92c672745ee026ee14d9d13427152560dc795"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_045607-xj8i5fkb/files/media/images/plots/metrics/action change count_4000_2f15c6dd0f9fc3135b40.png",
+          "sha256": "2f15c6dd0f9fc3135b40b3b39eab3256ba3e7f50e9d555046f557196606f4bd4"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_045607-xj8i5fkb/files/media/images/plots/metrics/avg time lost_4000_78a91813b9358526f904.png",
+          "sha256": "78a91813b9358526f90454105503449cd4f437f91a5cb49e7b31c7dc1334ef3c"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260919_045607-xj8i5fkb/files/media/images/plots/metrics/time excess_4000_b526e50a2d4378d1ff73.png",
+          "sha256": "b526e50a2d4378d1ff731c0f89fc87f5b4471beefac09d9f35ee5abcde1a07db"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.831473429951687,
+        "t_train": 4.867445531400965,
+        "t_CAV": 4.76391425120773,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.876512882447665,
+        "CAV_advantage": 1.0236357384500339,
+        "Effect_of_change": 1.0195630850995596,
+        "Effect_of_remaining": 0.9960213841726149,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.979000000000003,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.322131,
+        "winrate": 1.0,
+        "cost_of_learning": 7.192473429951691,
+        "cost_of_learning_humans": 6.894718196457327,
+        "cost_of_learning_CAVs": 7.6391062801932375,
+        "avg_time_lost": 15.797120772946846,
+        "avg_human_time_lost": 0.014926299045599131,
+        "avg_CAV_time_lost": 0.02577250500765877,
+        "diff_sumo_routerl": -0.056115096618353455
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind30_all70_ing2_s42",
+      "run_id": "eu9ak28i",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260920_162737-eu9ak28i/run-eu9ak28i.wandb",
+      "sha256": "0dcb0d7ce677cb6e21dffa1c3ab6e78505ecf4613a4224101b8f4e8938c3b91b",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260920_162737-eu9ak28i/files/media/images/plots/metrics/action change count_4000_2d63ee89d6153df25bb8.png",
+          "sha256": "2d63ee89d6153df25bb8b7236c285f0d3a7404caec296f960ee3ca29c95da2f0"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260920_162737-eu9ak28i/files/media/images/plots/metrics/avg time lost_4000_44f88199d5dcd532b729.png",
+          "sha256": "44f88199d5dcd532b729f072c635f1e3c3f36a8f5cf2905af37231399f735449"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260920_162737-eu9ak28i/files/media/images/plots/metrics/time excess_4000_24b43e82c3dc8635f5a4.png",
+          "sha256": "24b43e82c3dc8635f5a4c2abfde431684a67e0b9ff4457ff3d6056a0fb1d80ec"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260920_162737-eu9ak28i/files/media/images/plots/rewards_4000_6eeff2d6ef6e5575fe8e.png",
+          "sha256": "6eeff2d6ef6e5575fe8e07054a032694832d6e7af1a110879af4a46e08ba4ded"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260920_162737-eu9ak28i/files/media/images/plots/travel_times_4000_a66f77d9c69484605ea1.png",
+          "sha256": "a66f77d9c69484605ea11b70144406620dd0d24d0f1b9b337557e9872292db6b"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.840577777777776,
+        "t_train": 4.877349335748792,
+        "t_CAV": 4.800409420289857,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.867356682769726,
+        "CAV_advantage": 1.0139461568000645,
+        "Effect_of_change": 1.0118118447525732,
+        "Effect_of_remaining": 0.9978950439989566,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.998800000000006,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.3289714999999993,
+        "winrate": 1.0,
+        "cost_of_learning": 3.689400966183575,
+        "cost_of_learning_humans": 3.4923349436392916,
+        "cost_of_learning_CAVs": 3.985,
+        "avg_time_lost": 23.902251207729453,
+        "avg_human_time_lost": 0.00964820706178074,
+        "avg_CAV_time_lost": 0.05840040650406504,
+        "diff_sumo_routerl": -0.05601944444444129
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind15_all85_ing2_s42",
+      "run_id": "bz6d23zh",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260921_002932-bz6d23zh/run-bz6d23zh.wandb",
+      "sha256": "d40cc2c45ee44fd270838c69f5691bde3bdcaf1c8a4e89bebc788326dd065295",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260921_002932-bz6d23zh/files/media/images/plots/metrics/action change count_4000_a45a378a715965baa55c.png",
+          "sha256": "a45a378a715965baa55c0124696ceda547ba409af0e2db7519f5b95db6219a34"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260921_002932-bz6d23zh/files/media/images/plots/metrics/avg time lost_4000_f72e87c3b2e4e6c60e78.png",
+          "sha256": "f72e87c3b2e4e6c60e78352b40f156f92656195a34e47cc6e3258cbc3d873b84"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260921_002932-bz6d23zh/files/media/images/plots/metrics/time excess_4000_913f76668b34e447cba4.png",
+          "sha256": "913f76668b34e447cba4044de33449e521ef50fc39e1bb9d0bace3384f44db24"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260921_002932-bz6d23zh/files/media/images/plots/rewards_4000_e9fbef3e3d882ecd57c2.png",
+          "sha256": "e9fbef3e3d882ecd57c23ed1e976837235a701fc771c3363786a5eb637c8d030"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260921_002932-bz6d23zh/files/media/images/plots/travel_times_4000_ab8060968a69a2d06d60.png",
+          "sha256": "ab8060968a69a2d06d6077c4e1bb4cf7a4b4977a4899ebe2342a3ae75b2c4c71"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.907084541062803,
+        "t_train": 4.902695471014492,
+        "t_CAV": 4.9398949275362325,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.885210950080515,
+        "CAV_advantage": 0.9889301334830232,
+        "Effect_of_change": 0.9832417859813853,
+        "Effect_of_remaining": 0.9942479783869024,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.7468,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.3419400000000006,
+        "winrate": 0.0,
+        "cost_of_learning": 4.372106280193236,
+        "cost_of_learning_humans": 4.07634460547504,
+        "cost_of_learning_CAVs": 4.815748792270531,
+        "avg_time_lost": 45.509294685990334,
+        "avg_human_time_lost": 0.01053988452928005,
+        "avg_CAV_time_lost": 0.12293802285848945,
+        "diff_sumo_routerl": -0.05551787439613598
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind05_all95_ing2_s42",
+      "run_id": "94cwyrr6",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260922_073306-94cwyrr6/run-94cwyrr6.wandb",
+      "sha256": "b7ff2f6eb723f9b802bd3df1b83fa0eb35c81b11585f3b077b35c7fac2a2eca3",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260922_073306-94cwyrr6/files/media/images/plots/rewards_4000_58031fac0396a07dd97f.png",
+          "sha256": "58031fac0396a07dd97f7f1dfd6ce3092b6d39d89649a0a50daa83c7cdbcd238"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_073306-94cwyrr6/files/media/images/plots/travel_times_4000_3d63e13d894d2da4209e.png",
+          "sha256": "3d63e13d894d2da4209eb5a40b3915a1b27af5efdb1b87b1f7c753965378972a"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_073306-94cwyrr6/files/media/images/plots/metrics/action change count_4000_026a6ba63568da45827c.png",
+          "sha256": "026a6ba63568da45827c891621a81d8e708d24a31319f8f1014ceaa9192f9a99"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_073306-94cwyrr6/files/media/images/plots/metrics/avg time lost_4000_4bf9f7f134c455dd72c5.png",
+          "sha256": "4bf9f7f134c455dd72c564c3ae2bfc9628fe03399b2b0dbba4667dc525a019b2"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_073306-94cwyrr6/files/media/images/plots/metrics/time excess_4000_c1b45078b924b1cf3b1d.png",
+          "sha256": "c1b45078b924b1cf3b1d8c27d7c9c94f9d4cd978f0a5709c1baf59cddb26d83a"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 4.982275845410626,
+        "t_train": 4.971304082125602,
+        "t_CAV": 5.1036437198067635,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.901363929146536,
+        "CAV_advantage": 0.9603656129296019,
+        "Effect_of_change": 0.9516947847008046,
+        "Effect_of_remaining": 0.9909713258033606,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.55420000000001,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.3606494999999996,
+        "winrate": 0.0,
+        "cost_of_learning": 4.004019323671497,
+        "cost_of_learning_humans": 3.715555555555556,
+        "cost_of_learning_CAVs": 4.43671497584541,
+        "avg_time_lost": 101.90000966183572,
+        "avg_human_time_lost": 0.013913907544872525,
+        "avg_CAV_time_lost": 0.2897998998468245,
+        "diff_sumo_routerl": -0.055942512077292506
+      },
+      "training_progress": 4000
+    },
+    {
+      "experiment": "iql_clusters_mixed_reward_ind0_all100_ing2_s42",
+      "run_id": "uzchsvd9",
+      "entity": "aintern26coexistence",
+      "project": "URB-Traffic-Routing",
+      "status": "completed",
+      "file": "scripts/wandb/offline-run-20260922_193924-uzchsvd9/run-uzchsvd9.wandb",
+      "sha256": "6d52270d6cee29cd1864af82d4498b6d5664bd856e08fb01cc80658257749cd1",
+      "exit_code": 0,
+      "git_commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7",
+      "versions": [
+        "wandb==0.29.0",
+        "numpy==2.5.3",
+        "pandas==3.0.5",
+        "routerl==2.0.0",
+        "torchrl==0.7.0",
+        "torch==2.6.0"
+      ],
+      "media": [
+        {
+          "file": "scripts/wandb/offline-run-20260922_193924-uzchsvd9/files/media/images/plots/rewards_4000_1e571717044cc5840ffa.png",
+          "sha256": "1e571717044cc5840ffae1acaa66245f15ed0a5dd4bf4c7f64e72959bd4177c5"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_193924-uzchsvd9/files/media/images/plots/travel_times_4000_7018eaa1f6c70f23708e.png",
+          "sha256": "7018eaa1f6c70f23708ef4232e52518195cee8cb7185ccd1bbfec2e3ab707947"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_193924-uzchsvd9/files/media/images/plots/metrics/action change count_4000_bbc2eeca523d8fe326c6.png",
+          "sha256": "bbc2eeca523d8fe326c62f861ec0d3bd9a8ae8d0b9052af54c81dc8137083b62"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_193924-uzchsvd9/files/media/images/plots/metrics/avg time lost_4000_2b8f07fa7c332c97f911.png",
+          "sha256": "2b8f07fa7c332c97f9113268cec653aa1b3d2ba179352bc79664441fcc3e9d1b"
+        },
+        {
+          "file": "scripts/wandb/offline-run-20260922_193924-uzchsvd9/files/media/images/plots/metrics/time excess_4000_8fbbc79e65bf3678f377.png",
+          "sha256": "8fbbc79e65bf3678f377cfcc6563e1a0adf87f263236e145d18450d3b4d677d8"
+        }
+      ],
+      "benchmark": {
+        "t_pre": 4.847303381642511,
+        "t_test": 5.100478743961351,
+        "t_train": 5.105678925120772,
+        "t_CAV": 5.434493961352659,
+        "t_HDV_pre": 4.857111111111111,
+        "t_HDV_test": 4.87780193236715,
+        "CAV_advantage": 0.897563226135788,
+        "Effect_of_change": 0.8937559128140359,
+        "Effect_of_remaining": 0.995758166989368,
+        "avg_speed_pre": 29.94120000000001,
+        "avg_speed_test": 29.431800000000006,
+        "avg_mileage_pre": 2.3305240000000005,
+        "avg_mileage_test": 2.4105510000000003,
+        "winrate": 0.0,
+        "cost_of_learning": 4.720386473429952,
+        "cost_of_learning_humans": 4.486924315619968,
+        "cost_of_learning_CAVs": 5.070579710144928,
+        "avg_time_lost": 211.7639420289855,
+        "avg_human_time_lost": 0.023320627626566094,
+        "avg_CAV_time_lost": 0.6106408330387652,
+        "diff_sumo_routerl": -0.05526207729468435
+      },
+      "training_progress": 4000
+    }
+  ]
+}

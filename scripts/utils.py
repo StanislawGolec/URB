@@ -307,8 +307,8 @@ def init_wandb(
     alg_config: Optional[str] = None,
     extra_tags: Optional[list[str]] = None,
     group: Optional[str] = None,
-    project: str = "URB-Traffic-Routing",
-    entity: Optional[str] = "aintern26coexistence",
+    project: Optional[str] = None,
+    entity: Optional[str] = None,
     mode: Optional[str] = None,
 ) -> Any:
     """
@@ -327,7 +327,15 @@ def init_wandb(
         entity: W&B team/entity name.
         mode: W&B run mode ('online', 'offline', or None).
     """
+    project = project or os.environ.get("WANDB_PROJECT", "URB-Traffic-Routing")
+    entity = entity if entity is not None else os.environ.get("WANDB_ENTITY", "aintern26coexistence")
+    mode = mode or os.environ.get("WANDB_MODE")
+    require_online = os.environ.get("WANDB_REQUIRE_ONLINE", "0").lower() in {"1", "true", "yes"}
+    if require_online and mode in {"offline", "disabled"}:
+        raise RuntimeError("WANDB_REQUIRE_ONLINE conflicts with offline/disabled mode.")
     if not HAS_WANDB or wandb is None:
+        if require_online:
+            raise RuntimeError("W&B is required for this job. Install wandb in the experiment environment.")
         print("[W&B WARNING] wandb is not installed. Experiment tracking disabled.")
         return None
 
@@ -358,9 +366,13 @@ def init_wandb(
 
     try:
         run = wandb.init(**init_kwargs)
+        if require_online and (getattr(run, "offline", False) or getattr(run, "disabled", False)):
+            raise RuntimeError("W&B returned an offline or disabled run while online tracking is required.")
         print(f"[W&B] Initialized run '{exp_id}' in project '{project}' (mode: {getattr(run, 'mode', 'online')}).")
         return run
     except Exception as e:
+        if require_online:
+            raise RuntimeError("W&B online initialization failed. Configure wandb login or WANDB_API_KEY on the server before submitting.") from e
         print(f"[W&B WARNING] wandb online init failed ({e}). Falling back to offline mode.")
         init_kwargs["mode"] = "offline"
         try:

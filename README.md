@@ -35,6 +35,9 @@ Through this broad experimental scheme, `URB` aims to:
 2) Drive competition for future algorithmic improvements, and
 3) Clarify the impact of collective CAV routing on congestion, emissions, and sustainability in future cities, equipping policymakers with solid arguments for CAV regulations.
 
+> 📌 **Latest Research & Empirical Analysis (October 2026):**  
+> A detailed diagnostic evaluation of the 10+16 experiment sweeps (QMIX vs IQL under altruistic and mixed rewards on `ingolstadt_custom2`) is available in the [Comprehensive Experiment Analysis & Research Roadmap](docs/EXPERIMENT_ANALYSIS_AND_ROADMAP.md) and the [10+16 Experiment Report](analysis/reports/10_plus_16/report.md). It documents empirical outcomes, VRAM scaling physics ($N_{\text{CAV}}^2$), sequential AEC credit assignment, and instructions for reproducing/retrying failed runs.
+
 
 ## 🔗 Workflow
 

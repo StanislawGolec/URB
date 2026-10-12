@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=qmix_ing2_alt10_s43
-#SBATCH --partition=student
+#SBATCH --partition=rknodes
 #SBATCH --qos=big
 #SBATCH --time=7-00:00:00
 #SBATCH --mem=32G
@@ -8,11 +8,13 @@
 #SBATCH --gres=gpu:1
 #SBATCH --output=container_printouts/slurm-%j.out
 
-nvidia-smi -L
+set -euo pipefail
+
+nvidia-smi --query-gpu=name,memory.total --format=csv
 
 PATH_PROGRAM="${PATH_PROGRAM:-/home/$USER/URB}"
 PUT_PROGRAM_TO="/app"
-PATH_SUMO_CONTAINER="/shared/sets/singularity/sumo1_26_0patched.sif"
+PATH_SUMO_CONTAINER="${PATH_SUMO_CONTAINER:-/shared/sets/singularity/sumo1_26_0patched.sif}"
 CMD_PATH="$PATH_PROGRAM/slurm_requests/cmd_container.sh"
 PRINTS_SAVE_PATH="$PATH_PROGRAM/slurm_requests/container_printouts/output_${SLURM_JOB_ID}.txt"
 
@@ -22,7 +24,7 @@ singularity exec --nv \
     --bind "$PATH_PROGRAM":"$PUT_PROGRAM_TO" \
     "$PATH_SUMO_CONTAINER" /bin/bash "$CMD_PATH" \
     scripts/qmix_torchrl_clusters.py \
-    --id qmix_clusters_alt10_ing2_s43 \
+    --id "qmix_clusters_alt10_ing2_s43${EXP_SUFFIX:-_bonk}" \
     --alg-conf config1 \
     --env-conf clusters_eta \
     --task-conf altruistic_10 \

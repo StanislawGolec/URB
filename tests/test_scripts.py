@@ -26,6 +26,7 @@ excluded_scripts = [
     "clustered_routes.py",
     "generate_clustered_routes.py",
     "centralized_wrapper.py",
+    "qmix_memory_preflight.py",
 ]
 
 print(f"[DEBUG] Looking for Python scripts in {SCRIPTS_DIR.resolve()}")
