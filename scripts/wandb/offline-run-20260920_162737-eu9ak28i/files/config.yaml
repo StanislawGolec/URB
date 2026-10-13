@@ -1,0 +1,202 @@
+_wandb:
+    value:
+        cli_version: 0.29.0
+        e:
+            8aoa9gu2wbyqrjig96ftsdtd44sboa9j:
+                args:
+                    - --id
+                    - iql_clusters_mixed_reward_ind30_all70_ing2_s42
+                    - --alg-conf
+                    - config1
+                    - --env-conf
+                    - clusters_eta
+                    - --task-conf
+                    - mixed_reward_ind30_all70
+                    - --net
+                    - ingolstadt_custom2
+                    - --env-seed
+                    - "42"
+                    - --torch-seed
+                    - "42"
+                codePath: scripts/iql_clusters.py
+                codePathLocal: iql_clusters.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "13.3"
+                disk:
+                    /:
+                        total: "16777216"
+                        used: "12288"
+                executable: /home/z1220859/miniconda3/envs/URB/bin/python
+                git:
+                    commit: 2ebca12add586d8cc32072e9d60eb4c1b337fff7
+                    remote: https://github.com/StanislawGolec/URB.git
+                gpu: NVIDIA GeForce RTX 2080 Ti
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 4352
+                      memoryTotal: "11811160064"
+                      name: NVIDIA GeForce RTX 2080 Ti
+                      uuid: GPU-1f03e8c2-fcce-739c-3b29-b3ad9ed25571
+                host: szarancza
+                memory:
+                    total: "540668338176"
+                os: Linux-7.0.0-28-generic-x86_64-with-glibc2.35
+                program: /app/scripts/iql_clusters.py
+                python: CPython 3.13.15
+                root: /app/scripts
+                slurm:
+                    array_job_id: "502573"
+                    array_task_count: "16"
+                    array_task_id: "13"
+                    array_task_max: "16"
+                    array_task_min: "1"
+                    array_task_step: "1"
+                    cluster_name: cluster
+                    conf: /etc/slurm.conf
+                    cpus_on_node: "4"
+                    cpus_per_task: "4"
+                    gpus_on_node: "1"
+                    gtids: "0"
+                    job_account: stud
+                    job_cpus_per_node: "4"
+                    job_gid: "1000"
+                    job_gpus: "0"
+                    job_id: "508852"
+                    job_name: urb_mixed_sweep
+                    job_nodelist: szarancza
+                    job_num_nodes: "1"
+                    job_partition: student
+                    job_qos: big
+                    job_uid: "22220"
+                    job_user: z1220859
+                    jobid: "508852"
+                    localid: "0"
+                    mem_per_node: "32768"
+                    nnodes: "1"
+                    node_aliases: (null)
+                    nodeid: "0"
+                    nodelist: szarancza
+                    prio_process: "0"
+                    procid: "0"
+                    submit_dir: /home/z1220859/URB/slurm_requests
+                    submit_host: gmum-gw
+                    task_pid: "3873410"
+                    tasks_per_node: "1"
+                    topology_addr: szarancza
+                    topology_addr_pattern: node
+                    working_cluster: cluster:gmum-gw:6817:9728:109
+                startedAt: "2026-09-20T14:27:37.114538Z"
+                writerId: 0s4nhoixf3f7sne2clgh7w1pfvyk3u4r
+        m: []
+        python_version: 3.13.15
+        t:
+            "1":
+                - 1
+            "2":
+                - 1
+            "3":
+                - 2
+                - 4
+                - 13
+                - 15
+                - 16
+                - 76
+                - 62
+            "4": 3.13.15
+            "5": 0.29.0
+            "12": 0.28.1
+            "13": linux-x86_64
+alg_config:
+    value: config1
+algorithm:
+    value: iql
+av_behavior:
+    value:
+        - -0.3
+        - 0
+        - 0
+        - -0.7
+batch_size:
+    value: 32
+buffer_size:
+    value: 2048
+env_config:
+    value: clusters_eta
+env_seed:
+    value: 42
+eps_decay:
+    value: 0.9985
+eps_init:
+    value: 1
+eps_min:
+    value: 0
+human_alpha:
+    value: 0.2
+human_beta:
+    value: 1.5
+human_beta_randomness:
+    value: 0.1
+human_deterministic:
+    value: false
+human_learning_episodes:
+    value: 300
+human_model:
+    value: gawron
+lr:
+    value: 0.001
+network:
+    value: ingolstadt_custom2
+num_agents:
+    value: 1035
+num_epochs:
+    value: 1
+num_hidden:
+    value: 1
+num_machines:
+    value: 414
+num_samples:
+    value: 10
+number_of_paths:
+    value: 4
+observations:
+    value: trip_info_eta
+path_gen_beta:
+    value: -5
+plot_choices:
+    value: basic
+plot_every:
+    value: 50
+ratio_machines:
+    value: 0.4
+route_set:
+    value: default-pre-integration
+save_every:
+    value: 5
+script:
+    value: /app/scripts/iql_clusters.py
+should_humans_adapt:
+    value: false
+shuffle:
+    value: false
+smooth_by:
+    value: 10
+task_config:
+    value: mixed_reward_ind30_all70
+test_eps:
+    value: 100
+torch_seed:
+    value: 42
+training_eps:
+    value: 4000
+update_every:
+    value: 1
+use_action_masks:
+    value: true
+use_clustered_routes:
+    value: true
+widths:
+    value:
+        - 64
+        - 64

@@ -1,0 +1,97 @@
+{
+  "os": "Linux-7.0.0-28-generic-x86_64-with-glibc2.35",
+  "python": "CPython 3.13.15",
+  "startedAt": "2026-09-17T07:39:02.757575Z",
+  "args": [
+    "--id",
+    "iql_clusters_mixed_reward_ind85_all15_ing2_s42",
+    "--alg-conf",
+    "config1",
+    "--env-conf",
+    "clusters_eta",
+    "--task-conf",
+    "mixed_reward_ind85_all15",
+    "--net",
+    "ingolstadt_custom2",
+    "--env-seed",
+    "42",
+    "--torch-seed",
+    "42"
+  ],
+  "program": "/app/scripts/iql_clusters.py",
+  "codePath": "scripts/iql_clusters.py",
+  "codePathLocal": "iql_clusters.py",
+  "git": {
+    "remote": "https://github.com/StanislawGolec/URB.git",
+    "commit": "2ebca12add586d8cc32072e9d60eb4c1b337fff7"
+  },
+  "root": "/app/scripts",
+  "host": "szarancza",
+  "executable": "/home/z1220859/miniconda3/envs/URB/bin/python",
+  "cpu_count": 8,
+  "cpu_count_logical": 16,
+  "gpu": "NVIDIA GeForce RTX 2080 Ti",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "16777216",
+      "used": "12288"
+    }
+  },
+  "memory": {
+    "total": "540668338176"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal": "11811160064",
+      "cudaCores": 4352,
+      "architecture": "Turing",
+      "uuid": "GPU-467453a8-1a0a-7658-ce33-52ef44f38b50"
+    }
+  ],
+  "cudaVersion": "13.3",
+  "slurm": {
+    "array_job_id": "502573",
+    "array_task_count": "16",
+    "array_task_id": "10",
+    "array_task_max": "16",
+    "array_task_min": "1",
+    "array_task_step": "1",
+    "cluster_name": "cluster",
+    "conf": "/etc/slurm.conf",
+    "cpus_on_node": "4",
+    "cpus_per_task": "4",
+    "gpus_on_node": "1",
+    "gtids": "0",
+    "job_account": "stud",
+    "job_cpus_per_node": "4",
+    "job_gid": "1000",
+    "job_gpus": "1",
+    "job_id": "502989",
+    "job_name": "urb_mixed_sweep",
+    "job_nodelist": "szarancza",
+    "job_num_nodes": "1",
+    "job_partition": "student",
+    "job_qos": "big",
+    "job_uid": "22220",
+    "job_user": "z1220859",
+    "jobid": "502989",
+    "localid": "0",
+    "mem_per_node": "32768",
+    "nnodes": "1",
+    "node_aliases": "(null)",
+    "nodeid": "0",
+    "nodelist": "szarancza",
+    "prio_process": "0",
+    "procid": "0",
+    "submit_dir": "/home/z1220859/URB/slurm_requests",
+    "submit_host": "gmum-gw",
+    "task_pid": "3766567",
+    "tasks_per_node": "1",
+    "topology_addr": "szarancza",
+    "topology_addr_pattern": "node",
+    "working_cluster": "cluster:gmum-gw:6817:9728:109"
+  },
+  "writerId": "34baldchp9ret8btb2kiw243i3xb6148"
+}
